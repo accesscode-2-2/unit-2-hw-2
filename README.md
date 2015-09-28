@@ -4,8 +4,8 @@
 Continue working on last weeks hw to incorporate more advanced/custom UI (UITableViewCell, MKMapView, etc).
 
 ### Option #2
-Continue working on the Instagram™ clone. Figure out how to get more accurate colors/fonts. Add a search bar that allows you to search by tag. Use the official Instagram™ app as a reference. 
-**Bonus:**  
+Continue working on the Instagram™ clone. Figure out how to get more accurate colors/fonts. Add a search bar that allows you to search by tag. Use the official Instagram™ app as a reference.   
+**Bonus:**    
 Feeling adventerous? Check out `UICollectionViewController`!
 
 ### Option #3
