@@ -29,18 +29,19 @@
     greenRectangle.keyPath = @"position";
     greenRectangle.path = CFAutorelease(CGPathCreateWithRect(makeRect, NULL));
     greenRectangle.duration = 4;
-    greenRectangle.additive = NO;
+    greenRectangle.additive = YES;
     greenRectangle.repeatCount = HUGE_VALF;
     greenRectangle.calculationMode = kCAAnimationPaced;
     greenRectangle.rotationMode = kCAAnimationRotateAuto;
+    greenRectangle.speed = 5.0;
     
     [self.firstView.layer addAnimation:greenRectangle forKey:@"greenRectangle"];
     
-    CGRect makeRectTwo = CGRectMake(0, 0, 150, 512);
+//    CGRect makeRectTwo = CGRectMake(-300, 0, 300, 600);
     
     CAKeyframeAnimation *blueRectangle = [CAKeyframeAnimation animation];
     blueRectangle.keyPath = @"position";
-    blueRectangle.path = CFAutorelease(CGPathCreateWithRect(makeRectTwo, NULL));
+    blueRectangle.path = CFAutorelease(CGPathCreateCopy(greenRectangle.path));
     blueRectangle.duration = 4;
     blueRectangle.additive = YES;
     blueRectangle.repeatCount = HUGE_VALF;
@@ -49,7 +50,7 @@
     
     [self.secondView.layer addAnimation:blueRectangle forKey:@"blueRectangle"];
     
-    CGRect makeRectThree = CGRectMake(0, 0, 300, 512);
+    CGRect makeRectThree = CGRectMake(-300, -600, 300, 600);
     
     CAKeyframeAnimation *redRectangle = [CAKeyframeAnimation animation];
     redRectangle.path = CFAutorelease(CGPathCreateWithRect(makeRectThree, NULL));
@@ -62,7 +63,7 @@
     
     [self.thirdView.layer addAnimation:redRectangle forKey:@"redRectangle"];
     
-    CGRect makeRectFour = CGRectMake(0, 0, 300, 512);
+    CGRect makeRectFour = CGRectMake(0, 0, 300, 600);
     
     CAKeyframeAnimation *yellowRectangle = [CAKeyframeAnimation animation];
     yellowRectangle.keyPath = @"position";

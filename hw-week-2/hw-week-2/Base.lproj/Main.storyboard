@@ -126,7 +126,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AVC-NO-w9i">
-                                <rect key="frame" x="500" y="64" width="100" height="100"/>
+                                <rect key="frame" x="100" y="64" width="100" height="100"/>
                                 <color key="backgroundColor" red="0.21493053519999999" green="0.45322788990000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="8R3-uz-TSP"/>
@@ -134,7 +134,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d7I-NE-3DD">
-                                <rect key="frame" x="500" y="500" width="100" height="100"/>
+                                <rect key="frame" x="100" y="164" width="100" height="100"/>
                                 <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="yD5-FJ-TqY"/>
@@ -150,7 +150,7 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iH3-Tz-nse">
-                                <rect key="frame" x="0.0" y="500" width="100" height="100"/>
+                                <rect key="frame" x="0.0" y="164" width="100" height="100"/>
                                 <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="cRc-Yp-Zei"/>
@@ -160,6 +160,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u3h-ah-IAX">
                                 <rect key="frame" x="248" y="333" width="105" height="30"/>
                                 <state key="normal" title="Next Animation"/>
+                                <connections>
+                                    <segue destination="1s8-Ox-07V" kind="show" id="mzW-Vt-q4A"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -169,14 +172,26 @@
                             <constraint firstItem="dBB-VI-dL9" firstAttribute="centerX" secondItem="bRu-15-Hws" secondAttribute="centerX" id="ChO-SW-HcQ"/>
                             <constraint firstItem="iH3-Tz-nse" firstAttribute="leading" secondItem="bRu-15-Hws" secondAttribute="leading" id="EY1-po-GPd"/>
                             <constraint firstAttribute="trailing" secondItem="d7I-NE-3DD" secondAttribute="trailing" id="FjB-4a-9Jj"/>
+                            <constraint firstItem="d7I-NE-3DD" firstAttribute="leading" secondItem="iH3-Tz-nse" secondAttribute="trailing" id="MNE-Fa-ZBH"/>
                             <constraint firstItem="dBB-VI-dL9" firstAttribute="centerY" secondItem="bRu-15-Hws" secondAttribute="centerY" id="RNz-QG-gtS"/>
                             <constraint firstItem="hif-mR-spi" firstAttribute="leading" secondItem="bRu-15-Hws" secondAttribute="leading" id="Vax-OB-tZr"/>
+                            <constraint firstItem="d7I-NE-3DD" firstAttribute="top" secondItem="AVC-NO-w9i" secondAttribute="bottom" id="cCw-jh-A9L"/>
                             <constraint firstAttribute="trailing" secondItem="AVC-NO-w9i" secondAttribute="trailing" id="dQU-QG-tbr"/>
                             <constraint firstItem="AVC-NO-w9i" firstAttribute="top" secondItem="Cma-4m-z4z" secondAttribute="bottom" id="hPk-N3-UbX"/>
                             <constraint firstItem="hif-mR-spi" firstAttribute="top" secondItem="Cma-4m-z4z" secondAttribute="bottom" id="i56-io-uY0"/>
                             <constraint firstItem="u3h-ah-IAX" firstAttribute="centerX" secondItem="bRu-15-Hws" secondAttribute="centerX" id="k3b-xR-mqh"/>
+                            <constraint firstItem="AVC-NO-w9i" firstAttribute="leading" secondItem="hif-mR-spi" secondAttribute="trailing" id="paT-hw-kmR"/>
+                            <constraint firstItem="iH3-Tz-nse" firstAttribute="top" secondItem="hif-mR-spi" secondAttribute="bottom" id="xws-Oy-ufC"/>
                             <constraint firstItem="EOw-Ph-TOV" firstAttribute="top" secondItem="iH3-Tz-nse" secondAttribute="bottom" id="yIW-Ul-Wod"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="dQU-QG-tbr"/>
+                                <exclude reference="FjB-4a-9Jj"/>
+                                <exclude reference="1WO-dn-0Mw"/>
+                                <exclude reference="yIW-Ul-Wod"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="firstView" destination="hif-mR-spi" id="HuY-fg-JZR"/>
@@ -188,6 +203,52 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CaZ-bh-PHr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="983" y="349"/>
+        </scene>
+        <!--Third View Controller-->
+        <scene sceneID="ISD-dV-3XO">
+            <objects>
+                <viewController id="1s8-Ox-07V" customClass="ThirdViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2cY-0A-tKv"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ym8-qM-MyT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hKr-7Q-gOT">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="153-ZE-PUm">
+                                <rect key="frame" x="180" y="200" width="240" height="200"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7hI-0q-RCA">
+                                        <rect key="frame" x="70" y="85" width="101" height="30"/>
+                                        <state key="normal" title="Press to rotate"/>
+                                        <connections>
+                                            <action selector="rotationAnimation:" destination="1s8-Ox-07V" eventType="touchUpInside" id="fIV-Tz-rfB"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.78029848030000004" green="1" blue="0.1339717255" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="7hI-0q-RCA" firstAttribute="centerY" secondItem="153-ZE-PUm" secondAttribute="centerY" id="L4v-Di-GaB"/>
+                                    <constraint firstAttribute="width" constant="240" id="ooO-0d-Ccx"/>
+                                    <constraint firstItem="7hI-0q-RCA" firstAttribute="centerX" secondItem="153-ZE-PUm" secondAttribute="centerX" id="tsc-cj-gK7"/>
+                                    <constraint firstAttribute="height" constant="200" id="vIZ-16-sjg"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="153-ZE-PUm" firstAttribute="centerY" secondItem="hKr-7Q-gOT" secondAttribute="centerY" id="TzT-Ha-bhh"/>
+                            <constraint firstItem="153-ZE-PUm" firstAttribute="centerX" secondItem="hKr-7Q-gOT" secondAttribute="centerX" id="vsK-Xa-Ig3"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="rotatingView" destination="153-ZE-PUm" id="OFi-yv-7R5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Sj5-Yh-sbq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1647" y="349"/>
         </scene>
     </scenes>
 </document>
