@@ -31,9 +31,9 @@
     
     CABasicAnimation *animation = [CABasicAnimation animation];
     animation.keyPath = @"position.y";
-    animation.fromValue = @16;
+    animation.fromValue = @0;
     animation.toValue = @550;
-    animation.duration = .4;
+    animation.duration = .8;
     animation.repeatCount = 4;
     
     [self.animationView.layer addAnimation:animation forKey:@"basic"];
