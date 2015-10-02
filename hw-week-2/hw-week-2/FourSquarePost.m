@@ -13,12 +13,12 @@
 - (instancetype)initWithJSON:(NSDictionary *)json {
     
     if (self = [super init]) {
-        self.venues = [[json objectForKey:@"response"] objectForKey:@"venues"]; // pull venues from dictionary
-        
-        NSLog(@"%@", self.venues); // does it work? 
+//        self.venues = [[json objectForKey:@"response"] objectForKey:@"venues"]; // pull venues from dictionary
+//        NSLog(@"%@", self.venues); // does it work?
         
         self.restaurantName = [json objectForKey:@"name"];
-
+        
+        // set address and distance properties here
         
         return self;
     }

@@ -34,7 +34,7 @@
     
     term = [term stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLHostAllowedCharacterSet]];
     
-    NSString *urlString = [NSString stringWithFormat:@"%@/%@/%@?client_id=%@&client_secret=%@&v=20150927&ll=%f,%f&query=pizza&limit=50", APIBase, APIVersion, APIEndpoint, kFSClientID, kFSClientSecret, location.latitude, location.longitude];
+     NSString *urlString = [NSString stringWithFormat:@"%@/%@/%@?client_id=%@&client_secret=%@&v=20150927&ll=%f,%f&query=%@&limit=50", APIBase, APIVersion, APIEndpoint, kFSClientID, kFSClientSecret, location.latitude, location.longitude, term];
     
     AFHTTPRequestOperationManager *manager = [[AFHTTPRequestOperationManager alloc] init];
     [manager GET:urlString parameters:nil success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
