@@ -15,3 +15,7 @@ Check out https://www.cocoacontrols.com/controls. This website provides examples
 Take a look a `[UIView animationWithDuration...]` or `CAAnimation`. Build a little app that demos different types of animation.  
 **Bonus:**  
 Incorporate Facebook's Pop animation framework (https://github.com/facebook/pop)
+
+
+
+ayy lmao
