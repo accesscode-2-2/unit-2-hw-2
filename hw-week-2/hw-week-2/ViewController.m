@@ -7,8 +7,11 @@
 //
 
 #import "ViewController.h"
+#import "IoGMarquee.h"
 
-@interface ViewController ()
+@interface ViewController () <UITextFieldDelegate>
+@property (weak, nonatomic) IBOutlet IoGMarquee *marquee;
+
 
 @end
 
@@ -16,12 +19,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+}
+- (IBAction)buttonTapped:(id)sender {
+    
+    NSString* message = @"Attention all planets of the Solar Federation: we have assumed control";
+    [self.marquee setupForMessage:message withBackgroundColor:[UIColor blackColor] andForegroundColor:[UIColor redColor]];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
+
 
 @end
