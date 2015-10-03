@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5D0B29DE1BBF1C4400521488 /* ADCircularMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D0B29DD1BBF1C4400521488 /* ADCircularMenu.m */; settings = {ASSET_TAGS = (); }; };
+		5D0B29E11BBF260400521488 /* CircularButtonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D0B29E01BBF260400521488 /* CircularButtonViewController.m */; settings = {ASSET_TAGS = (); }; };
+		5DB4AB4D1BBB1F71008DB4E3 /* IoGMarquee.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DB4AB4C1BBB1F71008DB4E3 /* IoGMarquee.m */; settings = {ASSET_TAGS = (); }; };
 		8DE041621BB9AE8A00F0590C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DE041611BB9AE8A00F0590C /* main.m */; };
 		8DE041651BB9AE8A00F0590C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DE041641BB9AE8A00F0590C /* AppDelegate.m */; };
 		8DE041681BB9AE8A00F0590C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DE041671BB9AE8A00F0590C /* ViewController.m */; };
@@ -16,6 +19,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5D0B29DC1BBF1C4400521488 /* ADCircularMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADCircularMenu.h; sourceTree = "<group>"; };
+		5D0B29DD1BBF1C4400521488 /* ADCircularMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADCircularMenu.m; sourceTree = "<group>"; };
+		5D0B29DF1BBF260400521488 /* CircularButtonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CircularButtonViewController.h; sourceTree = "<group>"; };
+		5D0B29E01BBF260400521488 /* CircularButtonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CircularButtonViewController.m; sourceTree = "<group>"; };
+		5DB4AB4B1BBB1F71008DB4E3 /* IoGMarquee.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IoGMarquee.h; sourceTree = "<group>"; };
+		5DB4AB4C1BBB1F71008DB4E3 /* IoGMarquee.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IoGMarquee.m; sourceTree = "<group>"; };
 		8DE0415D1BB9AE8A00F0590C /* hw-week-2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "hw-week-2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DE041611BB9AE8A00F0590C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8DE041631BB9AE8A00F0590C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -60,6 +69,12 @@
 			children = (
 				8DE041631BB9AE8A00F0590C /* AppDelegate.h */,
 				8DE041641BB9AE8A00F0590C /* AppDelegate.m */,
+				5D0B29DC1BBF1C4400521488 /* ADCircularMenu.h */,
+				5D0B29DD1BBF1C4400521488 /* ADCircularMenu.m */,
+				5DB4AB4B1BBB1F71008DB4E3 /* IoGMarquee.h */,
+				5DB4AB4C1BBB1F71008DB4E3 /* IoGMarquee.m */,
+				5D0B29DF1BBF260400521488 /* CircularButtonViewController.h */,
+				5D0B29E01BBF260400521488 /* CircularButtonViewController.m */,
 				8DE041661BB9AE8A00F0590C /* ViewController.h */,
 				8DE041671BB9AE8A00F0590C /* ViewController.m */,
 				8DE041691BB9AE8A00F0590C /* Main.storyboard */,
@@ -150,8 +165,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				8DE041681BB9AE8A00F0590C /* ViewController.m in Sources */,
+				5D0B29E11BBF260400521488 /* CircularButtonViewController.m in Sources */,
 				8DE041651BB9AE8A00F0590C /* AppDelegate.m in Sources */,
+				5DB4AB4D1BBB1F71008DB4E3 /* IoGMarquee.m in Sources */,
 				8DE041621BB9AE8A00F0590C /* main.m in Sources */,
+				5D0B29DE1BBF1C4400521488 /* ADCircularMenu.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,6 +316,7 @@
 				8DE041761BB9AE8A00F0590C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
