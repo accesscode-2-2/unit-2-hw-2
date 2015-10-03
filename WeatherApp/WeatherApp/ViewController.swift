@@ -46,10 +46,8 @@ class ViewController: UIViewController, UITextFieldDelegate, UITableViewDelegate
                     }
         }
 
-    
-
-    
   }
+    
  
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
     
