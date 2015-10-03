@@ -19,6 +19,7 @@
 		84C4B6571B81341B00F400C6 /* startRound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 84C4B6561B81341B00F400C6 /* startRound.mp3 */; };
 		84C4B65B1B8139D200F400C6 /* hit.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 84C4B65A1B8139D200F400C6 /* hit.mp3 */; };
 		84C4B65D1B813A5400F400C6 /* miss.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 84C4B65C1B813A5400F400C6 /* miss.mp3 */; };
+		9CB583F54165D24D0D63068A /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F4506C525B7DF4F49F52630 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +33,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1148829ADE637F6C20BE2875 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		2F4506C525B7DF4F49F52630 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		84C4B61F1B81146900F400C6 /* DuckHunkGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DuckHunkGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84C4B6231B81146900F400C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84C4B6241B81146900F400C6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -51,6 +54,7 @@
 		84C4B6561B81341B00F400C6 /* startRound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = startRound.mp3; sourceTree = "<group>"; };
 		84C4B65A1B8139D200F400C6 /* hit.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = hit.mp3; sourceTree = "<group>"; };
 		84C4B65C1B813A5400F400C6 /* miss.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = miss.mp3; sourceTree = "<group>"; };
+		A43532B882E21E43C3EC84C7 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9CB583F54165D24D0D63068A /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,6 +82,8 @@
 				84C4B6211B81146900F400C6 /* DuckHunkGame */,
 				84C4B63B1B81146900F400C6 /* DuckHunkGameTests */,
 				84C4B6201B81146900F400C6 /* Products */,
+				984D28371762C50261EFBC95 /* Pods */,
+				AE9BF95CA40B61EF9490CE65 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -136,6 +143,23 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		984D28371762C50261EFBC95 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A43532B882E21E43C3EC84C7 /* Pods.debug.xcconfig */,
+				1148829ADE637F6C20BE2875 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		AE9BF95CA40B61EF9490CE65 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2F4506C525B7DF4F49F52630 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -143,9 +167,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 84C4B6421B81146900F400C6 /* Build configuration list for PBXNativeTarget "DuckHunkGame" */;
 			buildPhases = (
+				785EC148B0843E67034AFD0A /* Check Pods Manifest.lock */,
 				84C4B61B1B81146900F400C6 /* Sources */,
 				84C4B61C1B81146900F400C6 /* Frameworks */,
 				84C4B61D1B81146900F400C6 /* Resources */,
+				E5C166E5ADDD658956A2C88E /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -234,6 +260,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		785EC148B0843E67034AFD0A /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E5C166E5ADDD658956A2C88E /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		84C4B61B1B81146900F400C6 /* Sources */ = {
@@ -367,6 +426,7 @@
 		};
 		84C4B6431B81146900F400C6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A43532B882E21E43C3EC84C7 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = DuckHunkGame/Info.plist;
@@ -377,6 +437,7 @@
 		};
 		84C4B6441B81146900F400C6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1148829ADE637F6C20BE2875 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = DuckHunkGame/Info.plist;
@@ -438,6 +499,7 @@
 				84C4B6441B81146900F400C6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		84C4B6451B81146900F400C6 /* Build configuration list for PBXNativeTarget "DuckHunkGameTests" */ = {
 			isa = XCConfigurationList;
@@ -446,6 +508,7 @@
 				84C4B6471B81146900F400C6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

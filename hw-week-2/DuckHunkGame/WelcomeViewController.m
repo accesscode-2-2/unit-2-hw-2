@@ -10,6 +10,7 @@
 #import "GameViewController.h"
 #import <AVFoundation/AVFoundation.h> // this allows us to include sounds!
 #import <objc/runtime.h>
+#import "LNBRippleEffect.h"
 
 
 @interface WelcomeViewController ()
@@ -26,16 +27,15 @@
 @end
 
 @implementation WelcomeViewController
-
-
-
-
--(void) bubbleButton {
-    self.PlayButton.transform = CGAffineTransformMakeScale(1, 0.8);
  
-    
-    
- //    
+
+
+//-(void) bubbleButton {
+//    self.PlayButton.transform = CGAffineTransformMakeScale(1, 0.8);
+// 
+//    
+//    
+//     
 //    [UIView animateWithDuration:2.0
 //                          delay:0
 //         usingSpringWithDamping:0.20
@@ -53,11 +53,11 @@
 //        
 //
 //    }];
-    
-     
-    
-}
-
+//    
+//    
+//    
+//}
+//
 
 
 
@@ -66,8 +66,11 @@
     [super viewDidLoad];
    
     
-    [self bubbleButton];
-    
+     //pod
+    LNBRippleEffect *rippleEffect = [[LNBRippleEffect alloc]initWithImage:[UIImage imageNamed:@""] Frame:CGRectMake(123, 470, 130, 130) Color:[UIColor colorWithRed:(28.0/255.0) green:(212.0/255.0) blue:(255.0/255.0) alpha:1] Target:@selector(playButtonTapped:) ID:self];
+    [rippleEffect setRippleColor:[UIColor colorWithRed:(28.0/255.0) green:(212.0/255.0) blue:(255.0/255.0) alpha:1]];
+    [rippleEffect setRippleTrailColor:[UIColor colorWithRed:(28.0/255.0) green:(212.0/255.0) blue:(255.0/255.0) alpha:0.5]];
+    [self.view addSubview:rippleEffect];
   
     
     
