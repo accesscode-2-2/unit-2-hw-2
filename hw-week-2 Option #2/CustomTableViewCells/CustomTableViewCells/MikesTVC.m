@@ -14,6 +14,7 @@
 #import <AFNetworking/AFNetworking.h>
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "InstagramPostHeaderViewDelegate.h"
+#import "UIColor+InstagramBlueUIColor.h"
 
 @interface MikesTVC () <InstagramPostHeaderViewDelegate, UITextFieldDelegate>
 
@@ -182,7 +183,7 @@
     
     
     headerView.usernameLabel.text = post.username;
-    headerView.usernameLabel.textColor = [UIColor colorWithRed:18.0/255.0 green:86.0/255.0 blue:136.0/255.0 alpha:1];
+    headerView.usernameLabel.textColor = [UIColor instagramBlue];
     headerView.avatarImageView.layer.cornerRadius = 21;
     headerView.avatarImageView.layer.masksToBounds = YES;
     headerView.avatarImageView.layer.borderColor = [UIColor lightGrayColor].CGColor;
@@ -226,7 +227,7 @@
     //cell.usernameLabel.text = [NSString stringWithFormat:@"@%@",post.username];
     
     cell.likeCountLabel.text = [NSString stringWithFormat:@"%ld likes", post.likeCount];
-    cell.likeCountLabel.textColor = [UIColor colorWithRed:18.0/255.0 green:86.0/255.0 blue:136.0/255.0 alpha:1];
+    cell.likeCountLabel.textColor = [UIColor instagramBlue];
     
     // cell.tagCountLabel.text = [NSString stringWithFormat:@"Tags: %ld", post.tags.count];
     

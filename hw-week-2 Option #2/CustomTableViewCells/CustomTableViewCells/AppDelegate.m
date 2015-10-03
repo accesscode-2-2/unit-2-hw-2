@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "UIColor+InstagramBlueUIColor.h"
 
 @interface AppDelegate ()
 
@@ -17,7 +18,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:18.0/255.0 green:86.0/255.0 blue:136.0/255.0 alpha:1]];
+    [[UINavigationBar appearance] setBarTintColor:[UIColor instagramBlue]];
     [[UINavigationBar appearance] setBarStyle:UIBarStyleBlackTranslucent];
     [[UINavigationBar appearance] setTranslucent:NO];
     
