@@ -109,10 +109,10 @@
     
 }
 
-/*
-- (void) touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+
+- (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     
-    UITouch *touch = [touch anyObject];
+    UITouch *touch = [[event allTouches] anyObject];
     CGPoint touchLocation = [touch locationInView:self.view];
     
     CGRect bugRect = [[[self.bug layer] presentationLayer] frame];
@@ -121,7 +121,7 @@
         bugDead = true;
         [UIView animateWithDuration:0.7
                               delay:0.0
-                            options:UIViewAnimationCurveEaseOut
+                            options:UIViewAnimationOptionCurveEaseOut
                          animations:^{
                              self.bug.transform = CGAffineTransformMakeScale(1.25, 0.75);
                          }
@@ -140,7 +140,7 @@
         return;
     }
 }
- */
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -157,7 +157,7 @@
     
     [UIView animateWithDuration:0.5
                           delay:1.0
-                        options:UIViewAnimationCurveEaseOut
+                        options:UIViewAnimationOptionCurveEaseOut
                      animations:^{
                          self.basketTop.frame = basketTopFrame;
                          self.basketBottom.frame = basketBottomFrame;
@@ -172,7 +172,7 @@
     
     [UIView animateWithDuration:1
                           delay:1.5
-                        options: UIViewAnimationCurveEaseOut
+                        options: UIViewAnimationOptionCurveEaseOut
                      animations:^{
                          self.napkinTop.frame = napkinTopFrame;
                          self.napkinBottom.frame = napkinBottomFrame;
