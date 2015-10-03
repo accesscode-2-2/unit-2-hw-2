@@ -104,13 +104,19 @@
 
 
 - (void)didTapLabelWithGesture:(UITapGestureRecognizer *)tapGesture {
+    [self presentUserProfile];
+}
+
+- (void)didTapUsernameWithGesture:(UITapGestureRecognizer *)tapGesture {
+    [self presentUserProfile];
+}
+
+- (void)presentUserProfile {
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:
                                 @"Main" bundle:[NSBundle mainBundle]];
     UIViewController *myController = [storyboard instantiateViewControllerWithIdentifier:@"practice"];
     [self presentViewController:myController animated:YES completion:nil];
 }
-
-
 
 
 
@@ -158,8 +164,12 @@
     
     
     headerView.usernameLabel.userInteractionEnabled = YES;
-    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapLabelWithGesture:)];
-    [headerView.usernameLabel addGestureRecognizer:tapGesture];
+    UITapGestureRecognizer *tapGestureForUsername = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapLabelWithGesture:)];
+    [headerView.usernameLabel addGestureRecognizer:tapGestureForUsername];
+    
+    headerView.avatarImageView.userInteractionEnabled = YES;
+    UITapGestureRecognizer *tapGestureForAvatar = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapUsernameWithGesture:)];
+    [headerView.avatarImageView addGestureRecognizer:tapGestureForAvatar];
     
     
     // grabbing the post from our search results that corresponds
@@ -172,7 +182,8 @@
     
     
     headerView.usernameLabel.text = post.username;
-    headerView.usernameLabel.textColor = [UIColor colorWithRed:18.0/255.0 green:86.0/255.0 blue:136.0/255.0 alpha:1];    headerView.avatarImageView.layer.cornerRadius = 21;
+    headerView.usernameLabel.textColor = [UIColor colorWithRed:18.0/255.0 green:86.0/255.0 blue:136.0/255.0 alpha:1];
+    headerView.avatarImageView.layer.cornerRadius = 21;
     headerView.avatarImageView.layer.masksToBounds = YES;
     headerView.avatarImageView.layer.borderColor = [UIColor lightGrayColor].CGColor;
     headerView.avatarImageView.layer.borderWidth = 0.5;

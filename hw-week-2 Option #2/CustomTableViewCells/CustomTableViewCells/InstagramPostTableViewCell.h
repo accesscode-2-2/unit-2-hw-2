@@ -9,8 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface InstagramPostTableViewCell : UITableViewCell
-@property (weak, nonatomic) IBOutlet UILabel *captionLabel;
 
+@property (weak, nonatomic) IBOutlet UILabel *captionLabel;
 @property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *likeCountLabel;
 @property (weak, nonatomic) IBOutlet UILabel *tagCountLabel;
