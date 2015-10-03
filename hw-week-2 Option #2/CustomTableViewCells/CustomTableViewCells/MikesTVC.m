@@ -15,23 +15,43 @@
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "InstagramPostHeaderViewDelegate.h"
 
-@interface MikesTVC () <InstagramPostHeaderViewDelegate>
+@interface MikesTVC () <InstagramPostHeaderViewDelegate, UITextFieldDelegate>
 
 @property (nonatomic) NSMutableArray *searchResults;
-
+@property (weak, nonatomic) IBOutlet UITextField *searchTextField;
 @property (nonatomic) InstagramPostHeaderView *instagramPostHeaderView;
 
 @end
 
 @implementation MikesTVC
 
-- (void)fetchInstagramData {
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    
+    // dismiss the keyboard with message:
+    [self.view endEditing:YES];
+    
+    // make an api request
+    [self fetchInstagramData:textField.text callbackBlock:^{
+        [self.tableView reloadData];
+    }];
+    
+    return YES;
+}
+
+- (void)fetchInstagramData:(NSString *)searchTerm
+              callbackBlock:(void(^)())block {
     
     // create an instagram url
-    NSString *instagramURL = @"https://api.instagram.com/v1/tags/maltese/media/recent?client_id=ac0ee52ebb154199bfabfb15b498c067";
+    NSString *urlString = [NSString stringWithFormat:@"https://api.instagram.com/v1/tags/%@/media/recent?client_id=ac0ee52ebb154199bfabfb15b498c067", searchTerm];
+    
+    NSString *encodedString = [urlString stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
+    
+    // create an instagram url
+    NSURL *instagramURL = [NSURL URLWithString:encodedString];
+    NSString *myString = [instagramURL absoluteString];
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    [manager GET:instagramURL parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [manager GET:myString parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
         NSArray *results = responseObject[@"data"];
         
@@ -53,12 +73,14 @@
         NSLog(@"JSON: %@", responseObject);
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);
+        
+        block();
     }];
 }
 
 
 - (void)refresh:(UIRefreshControl *)refresh {
-    [self fetchInstagramData];
+//    [self fetchInstagramData];
     [refresh endRefreshing];
 }
 
@@ -102,9 +124,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self fetchInstagramData];
+    //[self fetchInstagramData];
     
-    // tell the table view 
+    self.searchTextField.delegate = self;
+    
+    // tell the table view
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     self.tableView.estimatedRowHeight = 40.0;
     [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
