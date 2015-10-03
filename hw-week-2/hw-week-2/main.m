@@ -2,8 +2,8 @@
 //  main.m
 //  hw-week-2
 //
-//  Created by Michael Kavouras on 9/28/15.
-//  Copyright © 2015 Michael Kavouras. All rights reserved.
+//  Created by Brian Blanco on 10/2/15.
+//  Copyright © 2015 Brian Blanco. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
