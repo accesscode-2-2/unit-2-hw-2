@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +15,68 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plate_cheese.png" translatesAutoresizingMaskIntoConstraints="NO" id="uBF-Se-3ev">
+                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
+                            </imageView>
+                            <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bug.png" translatesAutoresizingMaskIntoConstraints="NO" id="R7C-g8-9RS">
+                                <rect key="frame" x="340" y="285" width="135" height="142"/>
+                            </imageView>
+                            <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fabric_top.png" translatesAutoresizingMaskIntoConstraints="NO" id="y1O-lb-xjL">
+                                <rect key="frame" x="0.0" y="20" width="600" height="325"/>
+                            </imageView>
+                            <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fabric_bottom.png" translatesAutoresizingMaskIntoConstraints="NO" id="0es-id-JIn">
+                                <rect key="frame" x="0.0" y="276" width="600" height="324"/>
+                            </imageView>
+                            <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="door_top.png" translatesAutoresizingMaskIntoConstraints="NO" id="cen-hO-yiO">
+                                <rect key="frame" x="0.0" y="20" width="600" height="325"/>
+                            </imageView>
+                            <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="door_bottom.png" translatesAutoresizingMaskIntoConstraints="NO" id="rYT-H0-W9f">
+                                <rect key="frame" x="0.0" y="276" width="600" height="324"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="0es-id-JIn" secondAttribute="bottom" id="0nI-ae-rTo"/>
+                            <constraint firstItem="rYT-H0-W9f" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="6d8-ww-n5z"/>
+                            <constraint firstItem="uBF-Se-3ev" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="6tl-M1-d8Q"/>
+                            <constraint firstItem="0es-id-JIn" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="EEc-T1-YRE"/>
+                            <constraint firstItem="rYT-H0-W9f" firstAttribute="top" secondItem="cen-hO-yiO" secondAttribute="bottom" constant="-69" id="F96-fz-5m4"/>
+                            <constraint firstAttribute="trailing" secondItem="uBF-Se-3ev" secondAttribute="trailing" id="GPC-1W-Ga3"/>
+                            <constraint firstItem="y1O-lb-xjL" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Iug-SY-hg0"/>
+                            <constraint firstItem="cen-hO-yiO" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="LO0-y3-nPO"/>
+                            <constraint firstAttribute="trailing" secondItem="y1O-lb-xjL" secondAttribute="trailing" id="M1f-IF-0V0"/>
+                            <constraint firstAttribute="trailing" secondItem="rYT-H0-W9f" secondAttribute="trailing" id="M5f-Jp-hYH"/>
+                            <constraint firstItem="uBF-Se-3ev" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Okj-Nx-adF"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="rYT-H0-W9f" secondAttribute="bottom" id="Rs2-QE-uMI"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="uBF-Se-3ev" secondAttribute="bottom" id="abM-Y6-iz2"/>
+                            <constraint firstAttribute="trailing" secondItem="0es-id-JIn" secondAttribute="trailing" id="bXF-pV-Sm0"/>
+                            <constraint firstItem="cen-hO-yiO" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="bxC-iD-fUl"/>
+                            <constraint firstAttribute="trailing" secondItem="cen-hO-yiO" secondAttribute="trailing" id="jdT-p7-H45"/>
+                            <constraint firstItem="0es-id-JIn" firstAttribute="top" secondItem="y1O-lb-xjL" secondAttribute="bottom" constant="-69" id="jfD-r3-DIl"/>
+                            <constraint firstItem="y1O-lb-xjL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="lTP-MU-XNK"/>
+                            <constraint firstItem="y1O-lb-xjL" firstAttribute="height" secondItem="0es-id-JIn" secondAttribute="height" id="mer-ZW-hUf"/>
+                            <constraint firstItem="cen-hO-yiO" firstAttribute="height" secondItem="rYT-H0-W9f" secondAttribute="height" id="zda-Ty-zSm"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="basketBottom" destination="rYT-H0-W9f" id="UHS-bX-rOB"/>
+                        <outlet property="basketTop" destination="cen-hO-yiO" id="7DD-KC-JRE"/>
+                        <outlet property="bug" destination="R7C-g8-9RS" id="HuE-XP-POr"/>
+                        <outlet property="napkinBottom" destination="0es-id-JIn" id="ZaY-fg-8mQ"/>
+                        <outlet property="napkinTop" destination="y1O-lb-xjL" id="6IO-Ws-4D1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
     </scenes>
+    <resources>
+        <image name="bug.png" width="135" height="142"/>
+        <image name="door_bottom.png" width="320" height="235"/>
+        <image name="door_top.png" width="320" height="266"/>
+        <image name="fabric_bottom.png" width="320" height="235"/>
+        <image name="fabric_top.png" width="320" height="260"/>
+        <image name="plate_cheese.png" width="320" height="480"/>
+    </resources>
 </document>
