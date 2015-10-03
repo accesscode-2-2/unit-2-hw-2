@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		84292EAF1BC0194A00C49636 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84292EAE1BC0194900C49636 /* QuartzCore.framework */; };
 		84C4B6251B81146900F400C6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C4B6241B81146900F400C6 /* main.m */; };
 		84C4B6281B81146900F400C6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C4B6271B81146900F400C6 /* AppDelegate.m */; };
 		84C4B62E1B81146900F400C6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84C4B62C1B81146900F400C6 /* Main.storyboard */; };
@@ -35,6 +36,7 @@
 /* Begin PBXFileReference section */
 		1148829ADE637F6C20BE2875 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		2F4506C525B7DF4F49F52630 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		84292EAE1BC0194900C49636 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		84C4B61F1B81146900F400C6 /* DuckHunkGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DuckHunkGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84C4B6231B81146900F400C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84C4B6241B81146900F400C6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84292EAF1BC0194A00C49636 /* QuartzCore.framework in Frameworks */,
 				9CB583F54165D24D0D63068A /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -155,6 +158,7 @@
 		AE9BF95CA40B61EF9490CE65 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				84292EAE1BC0194900C49636 /* QuartzCore.framework */,
 				2F4506C525B7DF4F49F52630 /* libPods.a */,
 			);
 			name = Frameworks;

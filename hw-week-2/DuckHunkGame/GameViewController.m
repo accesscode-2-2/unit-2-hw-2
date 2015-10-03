@@ -6,8 +6,17 @@
 //  Copyright (c) 2015 Diana Elezaj. All rights reserved.
 //
 
+
+#import <QuartzCore/QuartzCore.h>
 #import "GameViewController.h"
- 
+#import "RBBCustomAnimation.h"
+#import "RBBAnimation.h"
+#import "RBBSpringAnimation.h"
+
+#import "RBBEasingFunction.h"
+#import "RBBTweenAnimation.h"
+
+
 @interface GameViewController ()
 
 // music stuff
@@ -15,6 +24,7 @@
 
 
 @property (strong, nonatomic) IBOutlet UIButton *duck1;
+@property (weak, nonatomic) IBOutlet UIView *duck1View;
 @property (strong, nonatomic) IBOutlet UIButton *duck2;
 @property (strong, nonatomic) IBOutlet UIButton *duck3;
 @property (strong, nonatomic) IBOutlet UIButton *duck4;
@@ -78,9 +88,34 @@
     
     [_audioPlayerStartRound play];
     
+    
+    
+    
+    //duck moving
+//    RBBSpringAnimation *spring = [RBBSpringAnimation animationWithKeyPath:@"position.y"];
+//    
+//    spring.fromValue = @(-100.0f);
+//    spring.toValue = @(100.0f);
+//    spring.velocity = 0;
+//    spring.mass = 1;
+//    spring.damping = 10;
+//    spring.stiffness = 100;
+//    
+//    spring.additive = YES;
+//    spring.duration = [spring durationForEpsilon:0.01];
+//    [self.duck1.layer addAnimation:spring forKey:@"basic"];
+//    
+
+    
+    
+    
 
     self.startTimer = [NSTimer timerWithTimeInterval:6 target:self selector:@selector(duck1timerFired:) userInfo:nil repeats:NO];
     [[NSRunLoop currentRunLoop] addTimer:self.startTimer forMode:NSRunLoopCommonModes];
+    
+    
+    
+    
  }
 
 - (void)didReceiveMemoryWarning {
@@ -90,7 +125,50 @@
 
 
 - (void)duck1timerFired: (NSTimer *)timer{
+ 
+    
     self.duck1.hidden = NO;
+    //duck 1 moving
+//    CABasicAnimation *animation = [CABasicAnimation animation];
+//    animation.keyPath = @"position.x";
+//    animation.fromValue = @60;
+//    animation.toValue = @190;
+//    animation.duration = 3;
+//    animation.fillMode = kCAFillModeForwards;
+//    animation.removedOnCompletion = NO;
+//    animation.beginTime = CACurrentMediaTime();
+//    NSLog(@"duck 1 moving");
+//    
+//    [self.duck1.layer addAnimation:animation forKey:@"basic"];
+    
+    
+    
+    
+    
+    
+    
+    
+    RBBTweenAnimation *sinus = [RBBTweenAnimation animationWithKeyPath:@"position.y"];
+    sinus.fromValue = @(100);
+    sinus.toValue = @(220);
+    sinus.removedOnCompletion = YES;
+    
+    sinus.easing = ^CGFloat (CGFloat fraction) {
+        return sin((fraction) * 2 * M_PI);
+    };
+    
+    sinus.additive = YES;
+    sinus.duration = 5;
+     NSLog(@"duck 1 moving");
+    
+    [self.duck1.layer addAnimation:sinus forKey:@"basic"];
+ 
+    
+    
+    
+    
+    
+    
     //call the timer
     self.runningTimer = [NSTimer timerWithTimeInterval:0.0001 target:self selector:@selector(duckTimer:) userInfo:nil repeats:YES];
     
@@ -102,6 +180,10 @@
     self.ducksAliveLabel.text = [NSString stringWithFormat: @"%li",(long)self.ducksAlive];
     }
     [[NSRunLoop currentRunLoop] addTimer:self.runningTimer forMode:NSRunLoopCommonModes];
+    
+    
+    
+    
 
 }
 
@@ -154,6 +236,7 @@
 
 
 - (IBAction)duck1:(UIButton *)sender {
+    NSLog(@"Hit duck 1");
    // self.points = self.points + 1;
     [_audioPlayerHit stop];
 
@@ -177,6 +260,26 @@
      
      
 - (void)duck2timerFired: (NSTimer *)timer{
+    
+    //duck 2 moving
+    CABasicAnimation *animation2 = [CABasicAnimation animation];
+    animation2.keyPath = @"position.x";
+    animation2.fromValue = @200;
+    animation2.toValue = @88;
+    animation2.duration = 3;
+    
+    animation2.fillMode = kCAFillModeForwards;
+    animation2.removedOnCompletion = NO;
+    animation2.beginTime = CACurrentMediaTime();
+    NSLog(@"duck 2 moving");
+    
+    [self.duck2.layer addAnimation:animation2 forKey:@"basic"];
+ 
+    
+    
+    
+    
+    
     
     //call the timer
     self.startTimer = [NSTimer timerWithTimeInterval:0.0001 target:self selector:@selector(duckTimer:) userInfo:nil repeats:NO];
@@ -202,7 +305,7 @@
     
     
     
-    self.startTimer = [NSTimer timerWithTimeInterval:6 target:self selector:@selector(duck3timerFired:) userInfo:nil repeats:NO];
+    self.startTimer = [NSTimer timerWithTimeInterval:0.0001 target:self selector:@selector(duck3timerFired:) userInfo:nil repeats:NO];
     
     [[NSRunLoop currentRunLoop] addTimer:self.startTimer forMode:NSRunLoopCommonModes];
     
@@ -237,7 +340,7 @@
     
     
     
-    self.startTimer = [NSTimer timerWithTimeInterval:6 target:self selector:@selector(duck4timerFired:) userInfo:nil repeats:NO];
+    self.startTimer = [NSTimer timerWithTimeInterval:0.0001 target:self selector:@selector(duck4timerFired:) userInfo:nil repeats:NO];
     
     [[NSRunLoop currentRunLoop] addTimer:self.startTimer forMode:NSRunLoopCommonModes];
     
@@ -274,7 +377,7 @@
     
     
     
-    self.startTimer = [NSTimer timerWithTimeInterval:6 target:self selector:@selector(duck5timerFired:) userInfo:nil repeats:NO];
+    self.startTimer = [NSTimer timerWithTimeInterval:0.0001 target:self selector:@selector(duck5timerFired:) userInfo:nil repeats:NO];
     
     [[NSRunLoop currentRunLoop] addTimer:self.startTimer forMode:NSRunLoopCommonModes];
     
@@ -306,7 +409,7 @@
     
     
     
-    self.startTimer = [NSTimer timerWithTimeInterval:6 target:self selector:@selector(duck6timerFired:) userInfo:nil repeats:NO];
+    self.startTimer = [NSTimer timerWithTimeInterval:0.0001 target:self selector:@selector(duck6timerFired:) userInfo:nil repeats:NO];
     
     [[NSRunLoop currentRunLoop] addTimer:self.startTimer forMode:NSRunLoopCommonModes];
     
@@ -340,7 +443,7 @@
     self.duck7.hidden = NO;
 
     
-    self.startTimer = [NSTimer timerWithTimeInterval:6 target:self selector:@selector(duck7timerFired:) userInfo:nil repeats:NO];
+    self.startTimer = [NSTimer timerWithTimeInterval:0.0001 target:self selector:@selector(duck7timerFired:) userInfo:nil repeats:NO];
     
     [[NSRunLoop currentRunLoop] addTimer:self.startTimer forMode:NSRunLoopCommonModes];
 }
@@ -369,7 +472,7 @@
     self.duck7.hidden = YES;
     self.duck8.hidden = NO;
     
-    self.startTimer = [NSTimer timerWithTimeInterval:6 target:self selector:@selector(duck8timerFired:) userInfo:nil repeats:NO];
+    self.startTimer = [NSTimer timerWithTimeInterval:0.0001 target:self selector:@selector(duck8timerFired:) userInfo:nil repeats:NO];
     
     [[NSRunLoop currentRunLoop] addTimer:self.startTimer forMode:NSRunLoopCommonModes];
     
@@ -399,7 +502,7 @@
     self.duck8.hidden = YES;
     self.duck9.hidden = NO;
     
-    self.startTimer = [NSTimer timerWithTimeInterval:6 target:self selector:@selector(duck9timerFired:) userInfo:nil repeats:NO];
+    self.startTimer = [NSTimer timerWithTimeInterval:0.0001 target:self selector:@selector(duck9timerFired:) userInfo:nil repeats:NO];
     
     [[NSRunLoop currentRunLoop] addTimer:self.startTimer forMode:NSRunLoopCommonModes];
     
@@ -432,7 +535,7 @@
     self.duck9.hidden = YES;
     self.duck10.hidden = NO;
     
-    self.startTimer = [NSTimer timerWithTimeInterval:6 target:self selector:@selector(duck10timerFired:) userInfo:nil repeats:NO];
+    self.startTimer = [NSTimer timerWithTimeInterval:0.0001 target:self selector:@selector(duck10timerFired:) userInfo:nil repeats:NO];
     
     [[NSRunLoop currentRunLoop] addTimer:self.startTimer forMode:NSRunLoopCommonModes];
     
@@ -464,7 +567,7 @@
     self.duck10.hidden = YES;
     self.duck1.hidden = NO;
     
-    self.startTimer = [NSTimer timerWithTimeInterval:6 target:self selector:@selector(duck1timerFired:) userInfo:nil repeats:NO];
+    self.startTimer = [NSTimer timerWithTimeInterval:0.0001 target:self selector:@selector(duck1timerFired:) userInfo:nil repeats:NO];
     
     [[NSRunLoop currentRunLoop] addTimer:self.startTimer forMode:NSRunLoopCommonModes];
     

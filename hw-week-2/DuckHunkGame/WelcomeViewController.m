@@ -56,21 +56,24 @@
     
     
     //view
-    RBBCustomAnimation *rainbow = [RBBCustomAnimation animationWithKeyPath:@"backgroundColor"];
-    
-    rainbow.animationBlock = ^(CGFloat elapsed, CGFloat duration) {
-        UIColor *color = [UIColor colorWithHue:elapsed / duration
-                                    saturation:1
-                                    brightness:1
-                                         alpha:1];
-        
-        return (id)color.CGColor;
-    };
+//    RBBCustomAnimation *rainbow = [RBBCustomAnimation animationWithKeyPath:@"backgroundColor"];
+//    
+//    rainbow.animationBlock = ^(CGFloat elapsed, CGFloat duration) {
+//        UIColor *color = [UIColor colorWithHue:elapsed / duration
+//                                    saturation:1
+//                                    brightness:1
+//                                         alpha:1];
+//        
+//         return (id)color.CGColor;
+//    };
     
     
     
     
 }
+
+
+
 
 - (void)viewWillAppear:(BOOL)animated {
     [self ButtonEffect];
