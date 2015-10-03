@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		07E8ECCC1BBF8ED50023B5DB /* Ball.png in Resources */ = {isa = PBXBuildFile; fileRef = 07E8ECCB1BBF8ED50023B5DB /* Ball.png */; settings = {ASSET_TAGS = (); }; };
+		07E8ECCE1BBF90870023B5DB /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07E8ECCD1BBF90870023B5DB /* QuartzCore.framework */; };
 		8DE041621BB9AE8A00F0590C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DE041611BB9AE8A00F0590C /* main.m */; };
 		8DE041651BB9AE8A00F0590C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DE041641BB9AE8A00F0590C /* AppDelegate.m */; };
 		8DE041681BB9AE8A00F0590C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DE041671BB9AE8A00F0590C /* ViewController.m */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		07E8ECCB1BBF8ED50023B5DB /* Ball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Ball.png; path = ../../../Ball.png; sourceTree = "<group>"; };
+		07E8ECCD1BBF90870023B5DB /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		8DE0415D1BB9AE8A00F0590C /* hw-week-2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "hw-week-2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DE041611BB9AE8A00F0590C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8DE041631BB9AE8A00F0590C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -33,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07E8ECCE1BBF90870023B5DB /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +47,7 @@
 		8DE041541BB9AE8A00F0590C = {
 			isa = PBXGroup;
 			children = (
+				07E8ECCD1BBF90870023B5DB /* QuartzCore.framework */,
 				8DE0415F1BB9AE8A00F0590C /* hw-week-2 */,
 				8DE0415E1BB9AE8A00F0590C /* Products */,
 			);
@@ -75,6 +81,7 @@
 			isa = PBXGroup;
 			children = (
 				8DE041611BB9AE8A00F0590C /* main.m */,
+				07E8ECCB1BBF8ED50023B5DB /* Ball.png */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -138,6 +145,7 @@
 			files = (
 				8DE041701BB9AE8A00F0590C /* LaunchScreen.storyboard in Resources */,
 				8DE0416D1BB9AE8A00F0590C /* Assets.xcassets in Resources */,
+				07E8ECCC1BBF8ED50023B5DB /* Ball.png in Resources */,
 				8DE0416B1BB9AE8A00F0590C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -298,6 +306,7 @@
 				8DE041761BB9AE8A00F0590C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
