@@ -7,6 +7,7 @@
 //
 
 #import <QuartzCore/QuartzCore.h>
+#import <AudioToolbox/AudioToolbox.h>
 #import "ViewController.h"
 
 @interface ViewController (){
@@ -118,27 +119,38 @@
     CGRect bugRect = [[[self.bug layer] presentationLayer] frame];
     if (CGRectContainsPoint(bugRect, touchLocation)) {
         NSLog(@"Bug Tapped!");
-        bugDead = true;
-        [UIView animateWithDuration:0.7
-                              delay:0.0
-                            options:UIViewAnimationOptionCurveEaseOut
-                         animations:^{
-                             self.bug.transform = CGAffineTransformMakeScale(1.25, 0.75);
-                         }
-                         completion:^(BOOL finished) {
-                             [UIView animateWithDuration:2.0
-                                                   delay:2.0
-                                                 options:0
-                                              animations:^{
-                                                  self.bug.alpha = 0.0;
-                                              } completion:^(BOOL finished) {
-                                                  [self.bug removeFromSuperview];
-                                              }];
-                         }];
     } else {
         NSLog(@"Bug not tapped.");
         return;
     }
+    
+    NSString *squishPath = [[NSBundle mainBundle]
+                            pathForResource:@"squish" ofType:@"caf"];
+    NSURL *squishURL = [NSURL fileURLWithPath:squishPath];
+    SystemSoundID squishSoundID;
+    AudioServicesCreateSystemSoundID((__bridge CFURLRef)squishURL, &squishSoundID);
+    AudioServicesPlaySystemSound(squishSoundID);
+    
+    
+    
+    bugDead = true;
+    [UIView animateWithDuration:0.7
+                          delay:0.0
+                        options:UIViewAnimationOptionCurveEaseOut
+                     animations:^{
+                         self.bug.transform = CGAffineTransformMakeScale(1.25, 0.75);
+                     }
+                     completion:^(BOOL finished) {
+                         [UIView animateWithDuration:2.0
+                                               delay:2.0
+                                             options:0
+                                          animations:^{
+                                              self.bug.alpha = 0.0;
+                                          } completion:^(BOOL finished) {
+                                              [self.bug removeFromSuperview];
+                                          }];
+                     }];
+
 }
 
 
