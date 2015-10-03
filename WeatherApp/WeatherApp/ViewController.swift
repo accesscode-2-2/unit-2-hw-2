@@ -43,24 +43,23 @@ class ViewController: UIViewController, UITextFieldDelegate, UITableViewDelegate
                         }
         
         // Do any additional setup after loading the view, typically from a nib.
-    }
+                    }
         }
 
     
-    func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
-        
-        if segue.identifier == "segueTest" {
-            
-            var svc = segue.destinationViewController as! MapWebViewController;
-            
-            svc.toPass = userCity.text!
-        }
+
     
-   //city = enterCity.text.stringByReplacingOccurrencesOfString(" ", withString: "-")
-}
-    
-}
+  }
  
-
-//how to pass variable in swift- prepare for segue
+  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+    
+    if segue.identifier == "mapSegue" {
+      
+      let svc = segue.destinationViewController as! MapWebViewController;
+      
+      svc.toPass = userCity.text!
+    }
+    
+  }
+  
 }
