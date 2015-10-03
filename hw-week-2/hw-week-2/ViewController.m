@@ -7,8 +7,10 @@
 //
 
 #import "ViewController.h"
+#import "BLLoader.h"
 
 @interface ViewController ()
+@property (weak, nonatomic) IBOutlet BLLoader *loader;
 
 @end
 
@@ -17,6 +19,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    self.loader.lineWidth = 12.0;
+    self.loader.color = [UIColor darkGrayColor];
+    [self.loader startAnimation];
 }
 
 - (void)didReceiveMemoryWarning {
