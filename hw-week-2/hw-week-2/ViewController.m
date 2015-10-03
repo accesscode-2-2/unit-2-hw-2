@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import <pop/POP.h>
 
 @interface ViewController ()
 
@@ -22,6 +23,13 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+- (IBAction)buttonTapped1:(UIButton *)sender {
+//    POPAnimation *firstAnimation = [POPDecayAnimation animationWithPropertyNamed:kPOPLayerPositionX];
+//    [sender.layer pop_addAnimation:firstAnimation forKey:@"slide"];
+    
+    POPAnimation *firstAnimation = [POPBasicAnimation animationWithPropertyNamed:kPOPViewAlpha];
+    [sender.layer pop_addAnimation:firstAnimation forKey:@"slide"];
 }
 
 @end
