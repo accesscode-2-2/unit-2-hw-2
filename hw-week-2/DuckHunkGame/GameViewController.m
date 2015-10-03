@@ -7,20 +7,12 @@
 //
 
 #import "GameViewController.h"
-#import <AVFoundation/AVFoundation.h> // this allows us to include sounds!
-
+ 
 @interface GameViewController ()
 
 // music stuff
 
-{  
-    AVAudioPlayer *_audioPlayerStartRound;
-    AVAudioPlayer *_audioPlayerHit;
-    AVAudioPlayer *_audioPlayerTongueRolling;
-    AVAudioPlayer *_audioPlayerTwoToneDoorbell;
-    AVAudioPlayer *_audioPlayerTelephoneRing;
-    AVAudioPlayer *_audioPlayerButtonClickOn;
-}
+
 
 @property (strong, nonatomic) IBOutlet UIButton *duck1;
 @property (strong, nonatomic) IBOutlet UIButton *duck2;
@@ -59,7 +51,7 @@
     self.ducksAliveLabel.hidden = NO;
     self.scoresLabel.hidden=NO;
     
-    //show only duck 1
+    //hide all ducks
     self.duck1.hidden = YES;
     self.duck2.hidden = YES;
     self.duck3.hidden = YES;
@@ -70,12 +62,6 @@
     self.duck8.hidden = YES;
     self.duck9.hidden = YES;
     self.duck10.hidden = YES;
-    
-    
-    
-    
-  
-    
     
     
     
@@ -90,20 +76,11 @@
     NSURL *soundUrl2 = [NSURL fileURLWithPath:path2];
     _audioPlayerHit = [[AVAudioPlayer alloc] initWithContentsOfURL:soundUrl2 error:nil];
     
-    
-    
-    
     [_audioPlayerStartRound play];
-    
-    
     
 
     self.startTimer = [NSTimer timerWithTimeInterval:6 target:self selector:@selector(duck1timerFired:) userInfo:nil repeats:NO];
-    
     [[NSRunLoop currentRunLoop] addTimer:self.startTimer forMode:NSRunLoopCommonModes];
-   
-    
-    
  }
 
 - (void)didReceiveMemoryWarning {
@@ -117,9 +94,6 @@
     //call the timer
     self.runningTimer = [NSTimer timerWithTimeInterval:0.0001 target:self selector:@selector(duckTimer:) userInfo:nil repeats:YES];
     
-    [[NSRunLoop currentRunLoop] addTimer:self.runningTimer forMode:NSRunLoopCommonModes];
-    
-    
     
     if (self.timeIsOver == YES) {
     self.duck1.hidden = YES;
@@ -127,6 +101,8 @@
     self.ducksAlive = [self.ducksAliveLabel.text integerValue] + 1;
     self.ducksAliveLabel.text = [NSString stringWithFormat: @"%li",(long)self.ducksAlive];
     }
+    [[NSRunLoop currentRunLoop] addTimer:self.runningTimer forMode:NSRunLoopCommonModes];
+
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -137,7 +113,7 @@
                          //yourAnimation
                      } completion:^(BOOL finished){
                          NSLog(@"Animation is finished");
-                         self.timeLabel.text = @"HEY";
+                         self.timeLabel.text = @"0:00";
                      }];
 }
 
@@ -147,33 +123,16 @@
     
     CGFloat currentNumber = [self.timeLabel.text floatValue];
     CGFloat nextNumber = currentNumber + 0.001;
+    
+    if (nextNumber == 0.5) {
+        [timer invalidate];
+        NSLog(@"stoppppppppppp");
+        self.timeIsOver = YES;
+    }
+    
     self.timeLabel.text = [NSString stringWithFormat:@"%f", nextNumber];
 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-//    [UIView animateWithDuration:2.0 delay:0.0 options:UIViewAnimationOptionCurveEaseInOut
-//                     animations:^(void) {
-//                         //Leave it empty
-//                     }
-//                     completion:^(BOOL finished){
-//                         
-//                         // Your code goes here
-//                         [UIView animateWithDuration:1.0 delay:0.0 options:
-//                          UIViewAnimationOptionCurveEaseIn animations:^{
-//                          } completion:^ (BOOL completed) {}];
-//                     }];
-    
-    
-    
-    // should fix this one
+         // should fix this one
 //    while (nextNumber < 1) {
 //         currentNumber = [self.timeLabel.text floatValue];
 //         nextNumber = currentNumber + 0.001;
@@ -206,310 +165,310 @@
     
     
     
-//    self.startTimer = [NSTimer timerWithTimeInterval:6 target:self selector:@selector(duck2timerFired:) userInfo:nil repeats:NO];
-//    
-//    [[NSRunLoop currentRunLoop] addTimer:self.startTimer forMode:NSRunLoopCommonModes];
+    self.startTimer = [NSTimer timerWithTimeInterval:6 target:self selector:@selector(duck2timerFired:) userInfo:nil repeats:NO];
+    
+    [[NSRunLoop currentRunLoop] addTimer:self.startTimer forMode:NSRunLoopCommonModes];
 }
 
-//
-//
-//
-//
-//     
-//     
-//- (void)duck2timerFired: (NSTimer *)timer{
-//    
-//    //call the timer
-//    self.startTimer = [NSTimer timerWithTimeInterval:0.0001 target:self selector:@selector(duckTimer:) userInfo:nil repeats:NO];
-//    
-//    [[NSRunLoop currentRunLoop] addTimer:self.startTimer forMode:NSRunLoopCommonModes];
-//    
-//    if (self.timeIsOver == YES) {
-//        self.duck2.hidden = YES;
-//        
-//        self.ducksAlive = [self.ducksAliveLabel.text integerValue] + 1;
-//        self.ducksAliveLabel.text = [NSString stringWithFormat: @"%li",(long)self.ducksAlive];
-//    }
-//}
-//
-//- (IBAction)duck2:(UIButton *)sender {
-//    [_audioPlayerHit stop];
-//
-//    [_audioPlayerHit play];
-//    self.points = [self.scoresLabel.text integerValue] + 1;
-//    self.scoresLabel.text = [NSString stringWithFormat: @"%li",(long)self.points];
-//    self.duck2.hidden = YES;
-//    self.duck3.hidden = NO;
-//    
-//    
-//    
-//    self.startTimer = [NSTimer timerWithTimeInterval:6 target:self selector:@selector(duck3timerFired:) userInfo:nil repeats:NO];
-//    
-//    [[NSRunLoop currentRunLoop] addTimer:self.startTimer forMode:NSRunLoopCommonModes];
-//    
-//}
-//
-//
-//
-//- (void)duck3timerFired: (NSTimer *)timer{
-//    
-//    //call the timer
-//    self.startTimer = [NSTimer timerWithTimeInterval:0.0001 target:self selector:@selector(duckTimer:) userInfo:nil repeats:NO];
-//    
-//    [[NSRunLoop currentRunLoop] addTimer:self.startTimer forMode:NSRunLoopCommonModes];
-//    
-//    if (self.timeIsOver == YES) {
-//        self.duck3.hidden = YES;
-//        
-//        self.ducksAlive = [self.ducksAliveLabel.text integerValue] + 1;
-//        self.ducksAliveLabel.text = [NSString stringWithFormat: @"%li",(long)self.ducksAlive];
-//    }
-//}
-//
-//
-//- (IBAction)duck3:(UIButton *)sender {
-//    [_audioPlayerHit stop];
-//
-//    [_audioPlayerHit play];
-//    self.points = [self.scoresLabel.text integerValue] + 1;
-//    self.scoresLabel.text = [NSString stringWithFormat: @"%li",(long)self.points];
-//    self.duck3.hidden = YES;
-//    self.duck4.hidden = NO;
-//    
-//    
-//    
-//    self.startTimer = [NSTimer timerWithTimeInterval:6 target:self selector:@selector(duck4timerFired:) userInfo:nil repeats:NO];
-//    
-//    [[NSRunLoop currentRunLoop] addTimer:self.startTimer forMode:NSRunLoopCommonModes];
-//    
-//    
-//}
-//
-//
-//
-//
-//- (void)duck4timerFired: (NSTimer *)timer{
-//    
-//    //call the timer
-//    self.startTimer = [NSTimer timerWithTimeInterval:0.0001 target:self selector:@selector(duckTimer:) userInfo:nil repeats:NO];
-//    
-//    [[NSRunLoop currentRunLoop] addTimer:self.startTimer forMode:NSRunLoopCommonModes];
-//    
-//    if (self.timeIsOver == YES) {
-//        self.duck4.hidden = YES;
-//        
-//        self.ducksAlive = [self.ducksAliveLabel.text integerValue] + 1;
-//        self.ducksAliveLabel.text = [NSString stringWithFormat: @"%li",(long)self.ducksAlive];
-//    }
-//}
-//
-//
-//
-//- (IBAction)duck4:(UIButton *)sender {
-//    
-//    [_audioPlayerHit play];
-//    self.points = [self.scoresLabel.text integerValue] + 1;
-//    self.scoresLabel.text = [NSString stringWithFormat: @"%li",(long)self.points];
-//    self.duck4.hidden = YES;
-//    self.duck5.hidden = NO;
-//    
-//    
-//    
-//    self.startTimer = [NSTimer timerWithTimeInterval:6 target:self selector:@selector(duck5timerFired:) userInfo:nil repeats:NO];
-//    
-//    [[NSRunLoop currentRunLoop] addTimer:self.startTimer forMode:NSRunLoopCommonModes];
-//    
-//}
-//
-//
-//- (void)duck5timerFired: (NSTimer *)timer{
-//    
-//    //call the timer
-//    self.startTimer = [NSTimer timerWithTimeInterval:0.0001 target:self selector:@selector(duckTimer:) userInfo:nil repeats:NO];
-//    
-//    [[NSRunLoop currentRunLoop] addTimer:self.startTimer forMode:NSRunLoopCommonModes];
-//    
-//    if (self.timeIsOver == YES) {
-//        self.duck5.hidden = YES;
-//        
-//        self.ducksAlive = [self.ducksAliveLabel.text integerValue] + 1;
-//        self.ducksAliveLabel.text = [NSString stringWithFormat: @"%li",(long)self.ducksAlive];
-//    }
-//}
-//
-//- (IBAction)duck5:(UIButton *)sender {
-//    
-//    [_audioPlayerHit play];
-//    self.points = [self.scoresLabel.text integerValue] + 1;
-//    self.scoresLabel.text = [NSString stringWithFormat: @"%li",(long)self.points];
-//    self.duck5.hidden = YES;
-//    self.duck6.hidden = NO;
-//    
-//    
-//    
-//    self.startTimer = [NSTimer timerWithTimeInterval:6 target:self selector:@selector(duck6timerFired:) userInfo:nil repeats:NO];
-//    
-//    [[NSRunLoop currentRunLoop] addTimer:self.startTimer forMode:NSRunLoopCommonModes];
-//    
-//}
-//
-//
-//
-//- (void)duck6timerFired: (NSTimer *)timer{
-//    
-//    //call the timer
-//    self.startTimer = [NSTimer timerWithTimeInterval:0.0001 target:self selector:@selector(duckTimer:) userInfo:nil repeats:NO];
-//    
-//    [[NSRunLoop currentRunLoop] addTimer:self.startTimer forMode:NSRunLoopCommonModes];
-//    
-//    if (self.timeIsOver == YES) {
-//        self.duck6.hidden = YES;
-//        
-//        self.ducksAlive = [self.ducksAliveLabel.text integerValue] + 1;
-//        self.ducksAliveLabel.text = [NSString stringWithFormat: @"%li",(long)self.ducksAlive];
-//    }
-//}
-//
-//
-//
-//
-//- (IBAction)duck6:(UIButton *)sender {
-//    [_audioPlayerHit play];
-//    self.points = [self.scoresLabel.text integerValue] + 1;
-//    self.scoresLabel.text = [NSString stringWithFormat: @"%li",(long)self.points];
-//    self.duck6.hidden = YES;
-//    self.duck7.hidden = NO;
-//
-//    
-//    self.startTimer = [NSTimer timerWithTimeInterval:6 target:self selector:@selector(duck7timerFired:) userInfo:nil repeats:NO];
-//    
-//    [[NSRunLoop currentRunLoop] addTimer:self.startTimer forMode:NSRunLoopCommonModes];
-//}
-//
-//
-//
-//
-//- (void)duck7timerFired: (NSTimer *)timer{
-//    
-//    //call the timer
-//    self.startTimer = [NSTimer timerWithTimeInterval:0.0001 target:self selector:@selector(duckTimer:) userInfo:nil repeats:NO];
-//    
-//    [[NSRunLoop currentRunLoop] addTimer:self.startTimer forMode:NSRunLoopCommonModes];
-//    
-//    if (self.timeIsOver == YES) {
-//        self.duck7.hidden = YES;
-//        
-//        self.ducksAlive = [self.ducksAliveLabel.text integerValue] + 1;
-//        self.ducksAliveLabel.text = [NSString stringWithFormat: @"%li",(long)self.ducksAlive];
-//    }
-//}
-//- (IBAction)duck7:(UIButton *)sender {
-//    [_audioPlayerHit play];
-//    self.points = [self.scoresLabel.text integerValue] + 1;
-//    self.scoresLabel.text = [NSString stringWithFormat: @"%li",(long)self.points];
-//    self.duck7.hidden = YES;
-//    self.duck8.hidden = NO;
-//    
-//    self.startTimer = [NSTimer timerWithTimeInterval:6 target:self selector:@selector(duck8timerFired:) userInfo:nil repeats:NO];
-//    
-//    [[NSRunLoop currentRunLoop] addTimer:self.startTimer forMode:NSRunLoopCommonModes];
-//    
-//    
-//}
-//
-//
-//- (void)duck8timerFired: (NSTimer *)timer{
-//    
-//    //call the timer
-//    self.startTimer = [NSTimer timerWithTimeInterval:0.0001 target:self selector:@selector(duckTimer:) userInfo:nil repeats:NO];
-//    
-//    [[NSRunLoop currentRunLoop] addTimer:self.startTimer forMode:NSRunLoopCommonModes];
-//    
-//    if (self.timeIsOver == YES) {
-//        self.duck8.hidden = YES;
-//        
-//        self.ducksAlive = [self.ducksAliveLabel.text integerValue] + 1;
-//        self.ducksAliveLabel.text = [NSString stringWithFormat: @"%li",(long)self.ducksAlive];
-//    }
-//}
-//
-//- (IBAction)duck8:(UIButton *)sender {
-//    [_audioPlayerHit play];
-//    self.points = [self.scoresLabel.text integerValue] + 1;
-//    self.scoresLabel.text = [NSString stringWithFormat: @"%li",(long)self.points];
-//    self.duck8.hidden = YES;
-//    self.duck9.hidden = NO;
-//    
-//    self.startTimer = [NSTimer timerWithTimeInterval:6 target:self selector:@selector(duck9timerFired:) userInfo:nil repeats:NO];
-//    
-//    [[NSRunLoop currentRunLoop] addTimer:self.startTimer forMode:NSRunLoopCommonModes];
-//    
-//}
-//
-//
-//- (void)duck9timerFired: (NSTimer *)timer{
-//    
-//    //call the timer
-//    self.startTimer = [NSTimer timerWithTimeInterval:0.0001 target:self selector:@selector(duckTimer:) userInfo:nil repeats:NO];
-//    
-//    [[NSRunLoop currentRunLoop] addTimer:self.startTimer forMode:NSRunLoopCommonModes];
-//    
-//    if (self.timeIsOver == YES) {
-//        self.duck9.hidden = YES;
-//        
-//        self.ducksAlive = [self.ducksAliveLabel.text integerValue] + 1;
-//        self.ducksAliveLabel.text = [NSString stringWithFormat: @"%li",(long)self.ducksAlive];
-//    }
-//}
-//
-//
-//
-//
-//- (IBAction)duck9:(UIButton *)sender {
-//
-//    [_audioPlayerHit play];
-//    self.points = [self.scoresLabel.text integerValue] + 1;
-//    self.scoresLabel.text = [NSString stringWithFormat: @"%li",(long)self.points];
-//    self.duck9.hidden = YES;
-//    self.duck10.hidden = NO;
-//    
-//    self.startTimer = [NSTimer timerWithTimeInterval:6 target:self selector:@selector(duck10timerFired:) userInfo:nil repeats:NO];
-//    
-//    [[NSRunLoop currentRunLoop] addTimer:self.startTimer forMode:NSRunLoopCommonModes];
-//    
-//
-//
-//
-//}
-//
-//- (void)duck10timerFired: (NSTimer *)timer{
-//    
-//    //call the timer
-//    self.startTimer = [NSTimer timerWithTimeInterval:0.0001 target:self selector:@selector(duckTimer:) userInfo:nil repeats:NO];
-//    
-//    [[NSRunLoop currentRunLoop] addTimer:self.startTimer forMode:NSRunLoopCommonModes];
-//    
-//    if (self.timeIsOver == YES) {
-//        self.duck10.hidden = YES;
-//        
-//        self.ducksAlive = [self.ducksAliveLabel.text integerValue] + 1;
-//        self.ducksAliveLabel.text = [NSString stringWithFormat: @"%li",(long)self.ducksAlive];
-//    }
-//}
-//
-//
-//- (IBAction)duck10:(UIButton *)sender {
-//    [_audioPlayerHit play];
-//    self.points = [self.scoresLabel.text integerValue] + 1;
-//    self.scoresLabel.text = [NSString stringWithFormat: @"%li",(long)self.points];
-//    self.duck10.hidden = YES;
-//    self.duck1.hidden = NO;
-//    
-//    self.startTimer = [NSTimer timerWithTimeInterval:6 target:self selector:@selector(duck1timerFired:) userInfo:nil repeats:NO];
-//    
-//    [[NSRunLoop currentRunLoop] addTimer:self.startTimer forMode:NSRunLoopCommonModes];
-//    
-//}
+
+
+
+
+     
+     
+- (void)duck2timerFired: (NSTimer *)timer{
+    
+    //call the timer
+    self.startTimer = [NSTimer timerWithTimeInterval:0.0001 target:self selector:@selector(duckTimer:) userInfo:nil repeats:NO];
+    
+    [[NSRunLoop currentRunLoop] addTimer:self.startTimer forMode:NSRunLoopCommonModes];
+    
+    if (self.timeIsOver == YES) {
+        self.duck2.hidden = YES;
+        
+        self.ducksAlive = [self.ducksAliveLabel.text integerValue] + 1;
+        self.ducksAliveLabel.text = [NSString stringWithFormat: @"%li",(long)self.ducksAlive];
+    }
+}
+
+- (IBAction)duck2:(UIButton *)sender {
+    [_audioPlayerHit stop];
+
+    [_audioPlayerHit play];
+    self.points = [self.scoresLabel.text integerValue] + 1;
+    self.scoresLabel.text = [NSString stringWithFormat: @"%li",(long)self.points];
+    self.duck2.hidden = YES;
+    self.duck3.hidden = NO;
+    
+    
+    
+    self.startTimer = [NSTimer timerWithTimeInterval:6 target:self selector:@selector(duck3timerFired:) userInfo:nil repeats:NO];
+    
+    [[NSRunLoop currentRunLoop] addTimer:self.startTimer forMode:NSRunLoopCommonModes];
+    
+}
+
+
+
+- (void)duck3timerFired: (NSTimer *)timer{
+    
+    //call the timer
+    self.startTimer = [NSTimer timerWithTimeInterval:0.0001 target:self selector:@selector(duckTimer:) userInfo:nil repeats:NO];
+    
+    [[NSRunLoop currentRunLoop] addTimer:self.startTimer forMode:NSRunLoopCommonModes];
+    
+    if (self.timeIsOver == YES) {
+        self.duck3.hidden = YES;
+        
+        self.ducksAlive = [self.ducksAliveLabel.text integerValue] + 1;
+        self.ducksAliveLabel.text = [NSString stringWithFormat: @"%li",(long)self.ducksAlive];
+    }
+}
+
+
+- (IBAction)duck3:(UIButton *)sender {
+    [_audioPlayerHit stop];
+
+    [_audioPlayerHit play];
+    self.points = [self.scoresLabel.text integerValue] + 1;
+    self.scoresLabel.text = [NSString stringWithFormat: @"%li",(long)self.points];
+    self.duck3.hidden = YES;
+    self.duck4.hidden = NO;
+    
+    
+    
+    self.startTimer = [NSTimer timerWithTimeInterval:6 target:self selector:@selector(duck4timerFired:) userInfo:nil repeats:NO];
+    
+    [[NSRunLoop currentRunLoop] addTimer:self.startTimer forMode:NSRunLoopCommonModes];
+    
+    
+}
+
+
+
+
+- (void)duck4timerFired: (NSTimer *)timer{
+    
+    //call the timer
+    self.startTimer = [NSTimer timerWithTimeInterval:0.0001 target:self selector:@selector(duckTimer:) userInfo:nil repeats:NO];
+    
+    [[NSRunLoop currentRunLoop] addTimer:self.startTimer forMode:NSRunLoopCommonModes];
+    
+    if (self.timeIsOver == YES) {
+        self.duck4.hidden = YES;
+        
+        self.ducksAlive = [self.ducksAliveLabel.text integerValue] + 1;
+        self.ducksAliveLabel.text = [NSString stringWithFormat: @"%li",(long)self.ducksAlive];
+    }
+}
+
+
+
+- (IBAction)duck4:(UIButton *)sender {
+    
+    [_audioPlayerHit play];
+    self.points = [self.scoresLabel.text integerValue] + 1;
+    self.scoresLabel.text = [NSString stringWithFormat: @"%li",(long)self.points];
+    self.duck4.hidden = YES;
+    self.duck5.hidden = NO;
+    
+    
+    
+    self.startTimer = [NSTimer timerWithTimeInterval:6 target:self selector:@selector(duck5timerFired:) userInfo:nil repeats:NO];
+    
+    [[NSRunLoop currentRunLoop] addTimer:self.startTimer forMode:NSRunLoopCommonModes];
+    
+}
+
+
+- (void)duck5timerFired: (NSTimer *)timer{
+    
+    //call the timer
+    self.startTimer = [NSTimer timerWithTimeInterval:0.0001 target:self selector:@selector(duckTimer:) userInfo:nil repeats:NO];
+    
+    [[NSRunLoop currentRunLoop] addTimer:self.startTimer forMode:NSRunLoopCommonModes];
+    
+    if (self.timeIsOver == YES) {
+        self.duck5.hidden = YES;
+        
+        self.ducksAlive = [self.ducksAliveLabel.text integerValue] + 1;
+        self.ducksAliveLabel.text = [NSString stringWithFormat: @"%li",(long)self.ducksAlive];
+    }
+}
+
+- (IBAction)duck5:(UIButton *)sender {
+    
+    [_audioPlayerHit play];
+    self.points = [self.scoresLabel.text integerValue] + 1;
+    self.scoresLabel.text = [NSString stringWithFormat: @"%li",(long)self.points];
+    self.duck5.hidden = YES;
+    self.duck6.hidden = NO;
+    
+    
+    
+    self.startTimer = [NSTimer timerWithTimeInterval:6 target:self selector:@selector(duck6timerFired:) userInfo:nil repeats:NO];
+    
+    [[NSRunLoop currentRunLoop] addTimer:self.startTimer forMode:NSRunLoopCommonModes];
+    
+}
+
+
+
+- (void)duck6timerFired: (NSTimer *)timer{
+    
+    //call the timer
+    self.startTimer = [NSTimer timerWithTimeInterval:0.0001 target:self selector:@selector(duckTimer:) userInfo:nil repeats:NO];
+    
+    [[NSRunLoop currentRunLoop] addTimer:self.startTimer forMode:NSRunLoopCommonModes];
+    
+    if (self.timeIsOver == YES) {
+        self.duck6.hidden = YES;
+        
+        self.ducksAlive = [self.ducksAliveLabel.text integerValue] + 1;
+        self.ducksAliveLabel.text = [NSString stringWithFormat: @"%li",(long)self.ducksAlive];
+    }
+}
+
+
+
+
+- (IBAction)duck6:(UIButton *)sender {
+    [_audioPlayerHit play];
+    self.points = [self.scoresLabel.text integerValue] + 1;
+    self.scoresLabel.text = [NSString stringWithFormat: @"%li",(long)self.points];
+    self.duck6.hidden = YES;
+    self.duck7.hidden = NO;
+
+    
+    self.startTimer = [NSTimer timerWithTimeInterval:6 target:self selector:@selector(duck7timerFired:) userInfo:nil repeats:NO];
+    
+    [[NSRunLoop currentRunLoop] addTimer:self.startTimer forMode:NSRunLoopCommonModes];
+}
+
+
+
+
+- (void)duck7timerFired: (NSTimer *)timer{
+    
+    //call the timer
+    self.startTimer = [NSTimer timerWithTimeInterval:0.0001 target:self selector:@selector(duckTimer:) userInfo:nil repeats:NO];
+    
+    [[NSRunLoop currentRunLoop] addTimer:self.startTimer forMode:NSRunLoopCommonModes];
+    
+    if (self.timeIsOver == YES) {
+        self.duck7.hidden = YES;
+        
+        self.ducksAlive = [self.ducksAliveLabel.text integerValue] + 1;
+        self.ducksAliveLabel.text = [NSString stringWithFormat: @"%li",(long)self.ducksAlive];
+    }
+}
+- (IBAction)duck7:(UIButton *)sender {
+    [_audioPlayerHit play];
+    self.points = [self.scoresLabel.text integerValue] + 1;
+    self.scoresLabel.text = [NSString stringWithFormat: @"%li",(long)self.points];
+    self.duck7.hidden = YES;
+    self.duck8.hidden = NO;
+    
+    self.startTimer = [NSTimer timerWithTimeInterval:6 target:self selector:@selector(duck8timerFired:) userInfo:nil repeats:NO];
+    
+    [[NSRunLoop currentRunLoop] addTimer:self.startTimer forMode:NSRunLoopCommonModes];
+    
+    
+}
+
+
+- (void)duck8timerFired: (NSTimer *)timer{
+    
+    //call the timer
+    self.startTimer = [NSTimer timerWithTimeInterval:0.0001 target:self selector:@selector(duckTimer:) userInfo:nil repeats:NO];
+    
+    [[NSRunLoop currentRunLoop] addTimer:self.startTimer forMode:NSRunLoopCommonModes];
+    
+    if (self.timeIsOver == YES) {
+        self.duck8.hidden = YES;
+        
+        self.ducksAlive = [self.ducksAliveLabel.text integerValue] + 1;
+        self.ducksAliveLabel.text = [NSString stringWithFormat: @"%li",(long)self.ducksAlive];
+    }
+}
+
+- (IBAction)duck8:(UIButton *)sender {
+    [_audioPlayerHit play];
+    self.points = [self.scoresLabel.text integerValue] + 1;
+    self.scoresLabel.text = [NSString stringWithFormat: @"%li",(long)self.points];
+    self.duck8.hidden = YES;
+    self.duck9.hidden = NO;
+    
+    self.startTimer = [NSTimer timerWithTimeInterval:6 target:self selector:@selector(duck9timerFired:) userInfo:nil repeats:NO];
+    
+    [[NSRunLoop currentRunLoop] addTimer:self.startTimer forMode:NSRunLoopCommonModes];
+    
+}
+
+
+- (void)duck9timerFired: (NSTimer *)timer{
+    
+    //call the timer
+    self.startTimer = [NSTimer timerWithTimeInterval:0.0001 target:self selector:@selector(duckTimer:) userInfo:nil repeats:NO];
+    
+    [[NSRunLoop currentRunLoop] addTimer:self.startTimer forMode:NSRunLoopCommonModes];
+    
+    if (self.timeIsOver == YES) {
+        self.duck9.hidden = YES;
+        
+        self.ducksAlive = [self.ducksAliveLabel.text integerValue] + 1;
+        self.ducksAliveLabel.text = [NSString stringWithFormat: @"%li",(long)self.ducksAlive];
+    }
+}
+
+
+
+
+- (IBAction)duck9:(UIButton *)sender {
+
+    [_audioPlayerHit play];
+    self.points = [self.scoresLabel.text integerValue] + 1;
+    self.scoresLabel.text = [NSString stringWithFormat: @"%li",(long)self.points];
+    self.duck9.hidden = YES;
+    self.duck10.hidden = NO;
+    
+    self.startTimer = [NSTimer timerWithTimeInterval:6 target:self selector:@selector(duck10timerFired:) userInfo:nil repeats:NO];
+    
+    [[NSRunLoop currentRunLoop] addTimer:self.startTimer forMode:NSRunLoopCommonModes];
+    
+
+
+
+}
+
+- (void)duck10timerFired: (NSTimer *)timer{
+    
+    //call the timer
+    self.startTimer = [NSTimer timerWithTimeInterval:0.0001 target:self selector:@selector(duckTimer:) userInfo:nil repeats:NO];
+    
+    [[NSRunLoop currentRunLoop] addTimer:self.startTimer forMode:NSRunLoopCommonModes];
+    
+    if (self.timeIsOver == YES) {
+        self.duck10.hidden = YES;
+        
+        self.ducksAlive = [self.ducksAliveLabel.text integerValue] + 1;
+        self.ducksAliveLabel.text = [NSString stringWithFormat: @"%li",(long)self.ducksAlive];
+    }
+}
+
+
+- (IBAction)duck10:(UIButton *)sender {
+    [_audioPlayerHit play];
+    self.points = [self.scoresLabel.text integerValue] + 1;
+    self.scoresLabel.text = [NSString stringWithFormat: @"%li",(long)self.points];
+    self.duck10.hidden = YES;
+    self.duck1.hidden = NO;
+    
+    self.startTimer = [NSTimer timerWithTimeInterval:6 target:self selector:@selector(duck1timerFired:) userInfo:nil repeats:NO];
+    
+    [[NSRunLoop currentRunLoop] addTimer:self.startTimer forMode:NSRunLoopCommonModes];
+    
+}
 
 
 

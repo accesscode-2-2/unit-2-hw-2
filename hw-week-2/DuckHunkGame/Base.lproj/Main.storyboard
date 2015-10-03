@@ -66,12 +66,22 @@
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Sfw-ai-bpB">
                                         <rect key="frame" x="0.0" y="0.0" width="68" height="55"/>
                                     </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bFC-8O-8j8">
+                                        <rect key="frame" x="0.0" y="0.0" width="68" height="55"/>
+                                        <connections>
+                                            <action selector="duckSatelliteButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="P3Z-PR-RAe"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="bFC-8O-8j8" firstAttribute="leading" secondItem="Hw4-xQ-AWa" secondAttribute="leading" id="AFV-c2-oxd"/>
                                     <constraint firstAttribute="trailing" secondItem="Sfw-ai-bpB" secondAttribute="trailing" id="BQO-FP-Seh"/>
+                                    <constraint firstAttribute="bottom" secondItem="bFC-8O-8j8" secondAttribute="bottom" id="Eto-rw-aUQ"/>
+                                    <constraint firstItem="bFC-8O-8j8" firstAttribute="top" secondItem="Hw4-xQ-AWa" secondAttribute="top" id="K9D-S8-ASl"/>
                                     <constraint firstAttribute="width" constant="68" id="Kdh-U5-giC"/>
                                     <constraint firstItem="Sfw-ai-bpB" firstAttribute="top" secondItem="Hw4-xQ-AWa" secondAttribute="top" id="Wdf-CB-63Z"/>
                                     <constraint firstAttribute="bottom" secondItem="Sfw-ai-bpB" secondAttribute="bottom" id="XqW-V2-69l"/>
+                                    <constraint firstAttribute="trailing" secondItem="bFC-8O-8j8" secondAttribute="trailing" id="by0-Z0-nZN"/>
                                     <constraint firstAttribute="height" constant="55" id="mgn-jk-a9A"/>
                                     <constraint firstItem="Sfw-ai-bpB" firstAttribute="leading" secondItem="Hw4-xQ-AWa" secondAttribute="leading" id="zX6-xI-N8R"/>
                                 </constraints>
@@ -121,15 +131,6 @@
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NatureView" translatesAutoresizingMaskIntoConstraints="NO" id="I2W-28-Hn6" userLabel="Image ViewHolder">
                                         <rect key="frame" x="8" y="8" width="576" height="584"/>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j3T-Xl-W2r" userLabel="duck1">
-                                        <rect key="frame" x="162" y="29" width="72" height="56"/>
-                                        <state key="normal" title="Button" image="duck2">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="duck1:" destination="Fyi-8c-LI6" eventType="touchUpInside" id="JtE-Oh-Rgz"/>
-                                        </connections>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YEq-N3-S2e" userLabel="duck2">
                                         <rect key="frame" x="201" y="152" width="47" height="37"/>
                                         <state key="normal" title="Button" image="duck1">
@@ -251,7 +252,7 @@
                                             <action selector="duck7:" destination="Fyi-8c-LI6" eventType="touchUpInside" id="jSA-jB-hiF"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nBw-iY-eTH">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nBw-iY-eTH">
                                         <rect key="frame" x="27" y="432" width="96" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="Jdv-PF-iox"/>
@@ -261,6 +262,15 @@
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j3T-Xl-W2r" userLabel="duck1">
+                                        <rect key="frame" x="208" y="185" width="72" height="56"/>
+                                        <state key="normal" title="Button" image="duck2">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="duck1:" destination="Fyi-8c-LI6" eventType="touchUpInside" id="JtE-Oh-Rgz"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
