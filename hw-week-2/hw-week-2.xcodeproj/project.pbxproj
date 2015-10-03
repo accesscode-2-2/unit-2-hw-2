@@ -13,6 +13,7 @@
 		8DE0416B1BB9AE8A00F0590C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DE041691BB9AE8A00F0590C /* Main.storyboard */; };
 		8DE0416D1BB9AE8A00F0590C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8DE0416C1BB9AE8A00F0590C /* Assets.xcassets */; };
 		8DE041701BB9AE8A00F0590C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DE0416E1BB9AE8A00F0590C /* LaunchScreen.storyboard */; };
+		9AB2A0C91BBF41930027077D /* CustomTableViewCells in Resources */ = {isa = PBXBuildFile; fileRef = 9AB2A0C81BBF41930027077D /* CustomTableViewCells */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		8DE0416C1BB9AE8A00F0590C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8DE0416F1BB9AE8A00F0590C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8DE041711BB9AE8A00F0590C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9AB2A0C81BBF41930027077D /* CustomTableViewCells */ = {isa = PBXFileReference; lastKnownFileType = folder; path = CustomTableViewCells; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +46,7 @@
 			children = (
 				8DE0415F1BB9AE8A00F0590C /* hw-week-2 */,
 				8DE0415E1BB9AE8A00F0590C /* Products */,
+				9AB2A0C81BBF41930027077D /* CustomTableViewCells */,
 			);
 			sourceTree = "<group>";
 		};
@@ -137,6 +140,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8DE041701BB9AE8A00F0590C /* LaunchScreen.storyboard in Resources */,
+				9AB2A0C91BBF41930027077D /* CustomTableViewCells in Resources */,
 				8DE0416D1BB9AE8A00F0590C /* Assets.xcassets in Resources */,
 				8DE0416B1BB9AE8A00F0590C /* Main.storyboard in Resources */,
 			);
@@ -265,6 +269,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mikekavouras.hw-week-2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -276,6 +281,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mikekavouras.hw-week-2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -298,6 +304,7 @@
 				8DE041761BB9AE8A00F0590C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
