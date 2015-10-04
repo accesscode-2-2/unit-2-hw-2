@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="InstagramCellIdentifier" rowHeight="214" id="6ei-mO-FnK" customClass="InstagramPostTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="150" height="213"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6ei-mO-FnK" id="ba8-fM-Ole">
+                <rect key="frame" x="0.0" y="0.0" width="150" height="212"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GVo-OB-CZI">
+                        <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="GVo-OB-CZI" secondAttribute="height" multiplier="1:1" id="ONy-eu-cYR"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7JT-HG-wkK">
+                        <rect key="frame" x="15" y="178" width="127" height="16"/>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e96-Bb-ems">
+                        <rect key="frame" x="43" y="158" width="9" height="10"/>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="instaheart" translatesAutoresizingMaskIntoConstraints="NO" id="Xb7-Iw-veI">
+                        <rect key="frame" x="15" y="153" width="20" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="20" id="Jow-uo-aHr"/>
+                            <constraint firstAttribute="height" constant="20" id="NPR-NV-fnW"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottomMargin" secondItem="7JT-HG-wkK" secondAttribute="bottom" constant="10.5" id="0qI-RL-vga"/>
+                    <constraint firstItem="7JT-HG-wkK" firstAttribute="leading" secondItem="ba8-fM-Ole" secondAttribute="leadingMargin" constant="2" id="19Z-gH-vJ1"/>
+                    <constraint firstItem="e96-Bb-ems" firstAttribute="centerY" secondItem="Xb7-Iw-veI" secondAttribute="centerY" id="289-4a-qOk"/>
+                    <constraint firstItem="7JT-HG-wkK" firstAttribute="top" secondItem="GVo-OB-CZI" secondAttribute="bottom" constant="8" id="2WD-Al-FkQ"/>
+                    <constraint firstItem="e96-Bb-ems" firstAttribute="leading" secondItem="ba8-fM-Ole" secondAttribute="leadingMargin" constant="15" id="5Gh-fb-2LL"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="7JT-HG-wkK" secondAttribute="bottom" id="7X7-s1-vqO"/>
+                    <constraint firstItem="Xb7-Iw-veI" firstAttribute="top" secondItem="GVo-OB-CZI" secondAttribute="bottom" constant="3" id="AJ7-tP-GjD"/>
+                    <constraint firstItem="7JT-HG-wkK" firstAttribute="leading" secondItem="ba8-fM-Ole" secondAttribute="leadingMargin" id="BwA-uQ-eYN"/>
+                    <constraint firstItem="7JT-HG-wkK" firstAttribute="trailing" secondItem="ba8-fM-Ole" secondAttribute="trailingMargin" id="C4h-cU-ZLz"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="7JT-HG-wkK" secondAttribute="bottom" id="Dk1-Xt-Vm0"/>
+                    <constraint firstItem="e96-Bb-ems" firstAttribute="leading" secondItem="ba8-fM-Ole" secondAttribute="leading" constant="15" id="Fy8-mc-N99"/>
+                    <constraint firstItem="7JT-HG-wkK" firstAttribute="top" secondItem="e96-Bb-ems" secondAttribute="bottom" constant="4" id="Gb8-vO-8YJ"/>
+                    <constraint firstItem="e96-Bb-ems" firstAttribute="bottom" secondItem="ba8-fM-Ole" secondAttribute="bottomMargin" id="IEz-Hh-dOl"/>
+                    <constraint firstItem="e96-Bb-ems" firstAttribute="top" secondItem="7JT-HG-wkK" secondAttribute="bottom" constant="8" id="TRb-9l-Mqg"/>
+                    <constraint firstItem="GVo-OB-CZI" firstAttribute="leading" secondItem="ba8-fM-Ole" secondAttribute="leadingMargin" constant="-8" id="ay1-vW-SDJ"/>
+                    <constraint firstItem="e96-Bb-ems" firstAttribute="top" secondItem="GVo-OB-CZI" secondAttribute="bottom" constant="8" id="gJB-hT-bBm"/>
+                    <constraint firstItem="GVo-OB-CZI" firstAttribute="top" secondItem="ba8-fM-Ole" secondAttribute="topMargin" constant="-8" id="m0v-UA-ovJ"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="GVo-OB-CZI" secondAttribute="trailing" constant="-8" id="m7g-fe-KBP"/>
+                    <constraint firstItem="7JT-HG-wkK" firstAttribute="leading" secondItem="ba8-fM-Ole" secondAttribute="leading" constant="15" id="mtQ-zG-ykH"/>
+                    <constraint firstItem="Xb7-Iw-veI" firstAttribute="leading" secondItem="ba8-fM-Ole" secondAttribute="leading" constant="15" id="muj-55-YiU"/>
+                    <constraint firstItem="7JT-HG-wkK" firstAttribute="top" secondItem="GVo-OB-CZI" secondAttribute="bottom" constant="8" id="skU-W2-0K9"/>
+                    <constraint firstItem="e96-Bb-ems" firstAttribute="leading" secondItem="Xb7-Iw-veI" secondAttribute="trailing" constant="8" id="tyx-0r-kAr"/>
+                    <constraint firstItem="7JT-HG-wkK" firstAttribute="top" secondItem="e96-Bb-ems" secondAttribute="bottom" constant="4" id="vxc-vT-lQc"/>
+                    <constraint firstItem="7JT-HG-wkK" firstAttribute="trailing" secondItem="ba8-fM-Ole" secondAttribute="trailingMargin" id="wJI-hb-J7W"/>
+                </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="5Gh-fb-2LL"/>
+                        <exclude reference="Fy8-mc-N99"/>
+                        <exclude reference="IEz-Hh-dOl"/>
+                        <exclude reference="TRb-9l-Mqg"/>
+                        <exclude reference="19Z-gH-vJ1"/>
+                        <exclude reference="2WD-Al-FkQ"/>
+                        <exclude reference="7X7-s1-vqO"/>
+                        <exclude reference="BwA-uQ-eYN"/>
+                        <exclude reference="Dk1-Xt-Vm0"/>
+                        <exclude reference="skU-W2-0K9"/>
+                        <exclude reference="vxc-vT-lQc"/>
+                        <exclude reference="wJI-hb-J7W"/>
+                    </mask>
+                </variation>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="commentsLabel" destination="7JT-HG-wkK" id="J3e-tB-k7K"/>
+                <outlet property="likeCountLabel" destination="e96-Bb-ems" id="sFd-XR-TSS"/>
+                <outlet property="userMediaImageView" destination="GVo-OB-CZI" id="YnI-Pd-Jed"/>
+            </connections>
+            <point key="canvasLocation" x="504" y="168.5"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="instaheart" width="72" height="72"/>
+    </resources>
+</document>
