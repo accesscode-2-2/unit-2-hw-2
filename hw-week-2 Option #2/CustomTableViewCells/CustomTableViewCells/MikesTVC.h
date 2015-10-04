@@ -10,4 +10,6 @@
 
 @interface MikesTVC : UITableViewController
 
+@property (strong,nonatomic) NSString *searchString;
+
 @end

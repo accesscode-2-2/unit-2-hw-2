@@ -14,30 +14,19 @@
 #import <AFNetworking/AFNetworking.h>
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "InstagramPostHeaderViewDelegate.h"
+#import "SearchViewController.h"
+#import "InstagramUserViewController.h"
 #import "UIColor+InstagramBlueUIColor.h"
 
-@interface MikesTVC () <InstagramPostHeaderViewDelegate, UITextFieldDelegate>
+@interface MikesTVC () <InstagramPostHeaderViewDelegate>
 
-@property (nonatomic) NSMutableArray *searchResults;
-@property (weak, nonatomic) IBOutlet UITextField *searchTextField;
+@property (strong, nonatomic) NSMutableArray *searchResults;
+
 @property (nonatomic) InstagramPostHeaderView *instagramPostHeaderView;
 
 @end
 
 @implementation MikesTVC
-
-- (BOOL)textFieldShouldReturn:(UITextField *)textField {
-    
-    // dismiss the keyboard with message:
-    [self.view endEditing:YES];
-    
-    // make an api request
-    [self fetchInstagramData:textField.text callbackBlock:^{
-        [self.tableView reloadData];
-    }];
-    
-    return YES;
-}
 
 - (void)fetchInstagramData:(NSString *)searchTerm
               callbackBlock:(void(^)())block {
@@ -81,7 +70,9 @@
 
 
 - (void)refresh:(UIRefreshControl *)refresh {
-//    [self fetchInstagramData];
+    [self fetchInstagramData:self.searchString callbackBlock:^{
+        
+    }];
     [refresh endRefreshing];
 }
 
@@ -90,50 +81,11 @@
 
 
 
-
-
-
-
-
-- (void)instagramUserViewDidTapUsernameButton:(InstagramPostHeaderView *)view {
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:
-                                @"Main" bundle:[NSBundle mainBundle]];
-    UIViewController *myController = [storyboard instantiateViewControllerWithIdentifier:@"practice"];
-    [self presentViewController:myController animated:YES completion:nil];
-}
-
-
-
-- (void)didTapLabelWithGesture:(UITapGestureRecognizer *)tapGesture {
-    [self presentUserProfile];
-}
-
-- (void)didTapUsernameWithGesture:(UITapGestureRecognizer *)tapGesture {
-    [self presentUserProfile];
-}
-
-- (void)presentUserProfile {
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:
-                                @"Main" bundle:[NSBundle mainBundle]];
-    UIViewController *myController = [storyboard instantiateViewControllerWithIdentifier:@"practice"];
-    [self presentViewController:myController animated:YES completion:nil];
-}
-
-
-
-
-
-
-
-
-
+#pragma mark - LifeCycle
 
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //[self fetchInstagramData];
-    
-    self.searchTextField.delegate = self;
     
     // tell the table view
     self.tableView.rowHeight = UITableViewAutomaticDimension;
@@ -154,7 +106,64 @@
     [self.tableView registerNib:[UINib nibWithNibName:@"InstagramPostHeaderView" bundle:nil] forHeaderFooterViewReuseIdentifier:@"InstagramHeaderIdentifier"];
     
     self.navigationItem.title = @"Instagram";
+    
+    if(self.searchString){
+        [self fetchInstagramData:self.searchString callbackBlock:^{
+            
+        }];
+    }else {
+        //TODO
+    }
 }
+
+
+#pragma mark - IBActions
+
+
+
+#pragma mark - Function
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    InstagramUserViewController *instagramUserViewController = segue.destinationViewController;
+    instagramUserViewController.searchResult = self.searchResults;
+}
+
+#pragma mark - View Layout
+
+
+#pragma mark - delegate 
+
+
+
+
+
+
+
+- (void)instagramUserViewDidTapUsernameButton:(InstagramPostHeaderView *)view {
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:
+                                @"Main" bundle:[NSBundle mainBundle]];
+    UIViewController *myController = [storyboard instantiateViewControllerWithIdentifier:@"practice"];
+    
+    [self presentViewController:myController animated:YES completion:nil];
+}
+
+
+
+- (void)didTapLabelWithGesture:(UITapGestureRecognizer *)tapGesture {
+    [self performSegueWithIdentifier:@"showUser" sender:nil];
+}
+
+- (void)didTapAvatarImageViewWithGesture:(UITapGestureRecognizer *)tapGesture {
+    [self performSegueWithIdentifier:@"showUser" sender:nil];
+}
+
+
+
+
+
+
+
+
 
 
 
@@ -165,12 +174,12 @@
     
     
     headerView.usernameLabel.userInteractionEnabled = YES;
-    UITapGestureRecognizer *tapGestureForUsername = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapLabelWithGesture:)];
-    [headerView.usernameLabel addGestureRecognizer:tapGestureForUsername];
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapLabelWithGesture:)];
+    [headerView.usernameLabel addGestureRecognizer:tapGesture];
     
     headerView.avatarImageView.userInteractionEnabled = YES;
-    UITapGestureRecognizer *tapGestureForAvatar = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapUsernameWithGesture:)];
-    [headerView.avatarImageView addGestureRecognizer:tapGestureForAvatar];
+    UITapGestureRecognizer *avatarImageViewTapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapAvatarImageViewWithGesture:)];
+    [headerView.avatarImageView addGestureRecognizer:avatarImageViewTapGesture];
     
     
     // grabbing the post from our search results that corresponds
@@ -183,8 +192,7 @@
     
     
     headerView.usernameLabel.text = post.username;
-    headerView.usernameLabel.textColor = [UIColor instagramBlue];
-    headerView.avatarImageView.layer.cornerRadius = 21;
+    headerView.usernameLabel.textColor = [UIColor instagramBlue];    headerView.avatarImageView.layer.cornerRadius = 21;
     headerView.avatarImageView.layer.masksToBounds = YES;
     headerView.avatarImageView.layer.borderColor = [UIColor lightGrayColor].CGColor;
     headerView.avatarImageView.layer.borderWidth = 0.5;

@@ -10,6 +10,6 @@
 
 @interface InstagramUserCollectionViewCell : UICollectionViewCell
 
-@property (weak, nonatomic) IBOutlet UILabel *textLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *userMediaView;
 
 @end
