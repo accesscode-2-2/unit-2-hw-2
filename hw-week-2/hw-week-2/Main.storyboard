@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="IaO-Fg-las">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="EZo-Ov-sNk">
+            <objects>
+                <viewController id="IaO-Fg-las" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="nr8-lp-gHF"/>
+                        <viewControllerLayoutGuide type="bottom" id="M4Y-EF-TKQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Mpe-Mx-EXk">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plate_cheese.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ij9-6Z-Odf">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bug.png" translatesAutoresizingMaskIntoConstraints="NO" id="yVq-yR-mFL">
+                                <rect key="frame" x="100" y="81" width="80" height="80"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fabric_bottom.png" translatesAutoresizingMaskIntoConstraints="NO" id="u5e-NP-DeX">
+                                <rect key="frame" x="0.0" y="333" width="320" height="235"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fabric_top.png" translatesAutoresizingMaskIntoConstraints="NO" id="r58-bj-qlt">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="267"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="door_top" translatesAutoresizingMaskIntoConstraints="NO" id="1bb-Pk-ktv">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="297"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="door_bottom" translatesAutoresizingMaskIntoConstraints="NO" id="2nZ-kB-H2L">
+                                <rect key="frame" x="0.0" y="223" width="320" height="345"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Ij9-6Z-Odf" firstAttribute="top" secondItem="Mpe-Mx-EXk" secondAttribute="top" id="EAv-Sj-MT0"/>
+                            <constraint firstAttribute="trailing" secondItem="Ij9-6Z-Odf" secondAttribute="trailing" id="EDS-yJ-kxr"/>
+                            <constraint firstItem="Ij9-6Z-Odf" firstAttribute="leading" secondItem="Mpe-Mx-EXk" secondAttribute="leading" id="WLQ-ma-BF6"/>
+                            <constraint firstItem="M4Y-EF-TKQ" firstAttribute="top" secondItem="Ij9-6Z-Odf" secondAttribute="bottom" id="vYt-7L-CX1"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="bottomImage" destination="2nZ-kB-H2L" id="Wgf-80-e8l"/>
+                        <outlet property="bug" destination="yVq-yR-mFL" id="zp7-mz-32M"/>
+                        <outlet property="fabricBottom" destination="u5e-NP-DeX" id="FkU-Zb-Jom"/>
+                        <outlet property="fabricTop" destination="r58-bj-qlt" id="cXC-Yi-Y3G"/>
+                        <outlet property="topImage" destination="1bb-Pk-ktv" id="UO4-Uh-vZD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EqH-y2-Fcn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="77" y="357"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="bug.png" width="135" height="142"/>
+        <image name="door_bottom" width="160" height="117"/>
+        <image name="door_top" width="160" height="133"/>
+        <image name="fabric_bottom.png" width="320" height="235"/>
+        <image name="fabric_top.png" width="320" height="260"/>
+        <image name="plate_cheese.png" width="320" height="480"/>
+    </resources>
+</document>
