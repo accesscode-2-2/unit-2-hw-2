@@ -1,0 +1,2 @@
+platform :ios, ‘8.3’
+pod 'PPBlinkOCR', '~> 1.1.1'
