@@ -1,0 +1,10 @@
+PODS:
+  - PPBlinkOCR (1.1.1)
+
+DEPENDENCIES:
+  - PPBlinkOCR (~> 1.1.1)
+
+SPEC CHECKSUMS:
+  PPBlinkOCR: 1a8fc652b5be9563c8c60f1d363a8dbd3f35c5dd
+
+COCOAPODS: 0.39.0.rc.1
