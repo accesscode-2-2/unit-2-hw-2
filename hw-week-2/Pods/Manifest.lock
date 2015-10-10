@@ -1,0 +1,13 @@
+PODS:
+  - LNBRippleEffect (0.1.0)
+  - RBBAnimation (0.4.0)
+
+DEPENDENCIES:
+  - LNBRippleEffect
+  - RBBAnimation (= 0.4.0)
+
+SPEC CHECKSUMS:
+  LNBRippleEffect: ae42724312a34b1faa97bdcc2ad5563b657d483e
+  RBBAnimation: 4b2d66f6d993febce63cd564da934985313b9c59
+
+COCOAPODS: 0.38.2

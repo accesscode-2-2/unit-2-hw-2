@@ -1,0 +1,5 @@
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/LNBRippleEffect" "${PODS_ROOT}/Headers/Public/RBBAnimation"
+OTHER_CFLAGS = $(inherited) -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/LNBRippleEffect" -isystem "${PODS_ROOT}/Headers/Public/RBBAnimation"
+OTHER_LDFLAGS = $(inherited) -ObjC -l"LNBRippleEffect" -l"RBBAnimation" -framework "QuartzCore"
+PODS_ROOT = ${SRCROOT}/Pods

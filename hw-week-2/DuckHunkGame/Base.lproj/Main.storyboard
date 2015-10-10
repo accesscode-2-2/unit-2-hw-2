@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Na9-MX-IFy">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="28U-RR-WXb">
+            <objects>
+                <navigationController id="Na9-MX-IFy" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ocM-dr-JPt">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="sN4-QQ-WCi"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vmh-N3-diB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-388" y="248"/>
+        </scene>
+        <!--Welcome View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="WelcomeViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="duckHunt2" translatesAutoresizingMaskIntoConstraints="NO" id="d3W-c3-OaX">
+                                <rect key="frame" x="20" y="40" width="560" height="520"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Rr-i4-lLV">
+                                <rect key="frame" x="234" y="440" width="132" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="132" id="iiL-PK-xqc"/>
+                                    <constraint firstAttribute="height" constant="40" id="nCH-Dy-pIu"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="43"/>
+                                <state key="normal" title="PLAY">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" red="0.75611636510000002" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="playButtonTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="yyl-cl-VAA"/>
+                                    <segue destination="Fyi-8c-LI6" kind="show" id="u5d-PP-Wk3"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2ny-uu-rq4">
+                                <rect key="frame" x="195" y="144" width="210" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="210" id="8NQ-mJ-dPD"/>
+                                    <constraint firstAttribute="height" constant="128" id="gnk-hM-48Y"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hw4-xQ-AWa">
+                                <rect key="frame" x="266" y="329" width="68" height="55"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Sfw-ai-bpB">
+                                        <rect key="frame" x="0.0" y="0.0" width="68" height="55"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bFC-8O-8j8">
+                                        <rect key="frame" x="0.0" y="0.0" width="68" height="55"/>
+                                        <connections>
+                                            <action selector="duckSatelliteButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="P3Z-PR-RAe"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="bFC-8O-8j8" firstAttribute="leading" secondItem="Hw4-xQ-AWa" secondAttribute="leading" id="AFV-c2-oxd"/>
+                                    <constraint firstAttribute="trailing" secondItem="Sfw-ai-bpB" secondAttribute="trailing" id="BQO-FP-Seh"/>
+                                    <constraint firstAttribute="bottom" secondItem="bFC-8O-8j8" secondAttribute="bottom" id="Eto-rw-aUQ"/>
+                                    <constraint firstItem="bFC-8O-8j8" firstAttribute="top" secondItem="Hw4-xQ-AWa" secondAttribute="top" id="K9D-S8-ASl"/>
+                                    <constraint firstAttribute="width" constant="68" id="Kdh-U5-giC"/>
+                                    <constraint firstItem="Sfw-ai-bpB" firstAttribute="top" secondItem="Hw4-xQ-AWa" secondAttribute="top" id="Wdf-CB-63Z"/>
+                                    <constraint firstAttribute="bottom" secondItem="Sfw-ai-bpB" secondAttribute="bottom" id="XqW-V2-69l"/>
+                                    <constraint firstAttribute="trailing" secondItem="bFC-8O-8j8" secondAttribute="trailing" id="by0-Z0-nZN"/>
+                                    <constraint firstAttribute="height" constant="55" id="mgn-jk-a9A"/>
+                                    <constraint firstItem="Sfw-ai-bpB" firstAttribute="leading" secondItem="Hw4-xQ-AWa" secondAttribute="leading" id="zX6-xI-N8R"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="d3W-c3-OaX" secondAttribute="bottom" constant="40" id="0Bh-Cq-H3v"/>
+                            <constraint firstAttribute="centerX" secondItem="2Rr-i4-lLV" secondAttribute="centerX" id="6EX-Ch-11b"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="2Rr-i4-lLV" secondAttribute="bottom" constant="120" id="6lN-42-te9"/>
+                            <constraint firstItem="2ny-uu-rq4" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="6xw-pV-IQR"/>
+                            <constraint firstItem="2ny-uu-rq4" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="80" id="C7G-9q-whB"/>
+                            <constraint firstItem="d3W-c3-OaX" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="topMargin" constant="40" id="CMG-SG-re9"/>
+                            <constraint firstItem="2Rr-i4-lLV" firstAttribute="top" secondItem="Hw4-xQ-AWa" secondAttribute="bottom" constant="56" id="hvz-hP-jaW"/>
+                            <constraint firstItem="Hw4-xQ-AWa" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="qfm-zo-uzW"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="d3W-c3-OaX" secondAttribute="trailing" id="sKp-YH-UgR"/>
+                            <constraint firstItem="d3W-c3-OaX" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="wMa-LE-ohJ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="UY6-4q-MnP"/>
+                    <connections>
+                        <outlet property="PlayButton" destination="2Rr-i4-lLV" id="sng-DC-ace"/>
+                        <outlet property="duckHuntAnimatedHeader" destination="2ny-uu-rq4" id="kAg-V6-w1d"/>
+                        <outlet property="satelliteDuckImageView" destination="Sfw-ai-bpB" id="sfe-1n-JN3"/>
+                        <outlet property="satelliteDuckView" destination="Hw4-xQ-AWa" id="lIR-45-tOk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="270" y="248"/>
+        </scene>
+        <!--Game View Controller-->
+        <scene sceneID="ukc-XL-eg5">
+            <objects>
+                <viewController id="Fyi-8c-LI6" customClass="GameViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="sTA-AI-Jyt"/>
+                        <viewControllerLayoutGuide type="bottom" id="vZP-oz-dKf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="YcL-Ec-eqr">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7uV-qQ-FUS">
+                                <rect key="frame" x="4" y="0.0" width="592" height="600"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NatureView" translatesAutoresizingMaskIntoConstraints="NO" id="I2W-28-Hn6" userLabel="Image ViewHolder">
+                                        <rect key="frame" x="8" y="8" width="576" height="584"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YEq-N3-S2e" userLabel="duck2">
+                                        <rect key="frame" x="201" y="152" width="47" height="37"/>
+                                        <state key="normal" title="Button" image="duck2">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="duck2:" destination="Fyi-8c-LI6" eventType="touchUpInside" id="u7L-PR-WYc"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5bU-RB-Qh6" userLabel="duck3">
+                                        <rect key="frame" x="169" y="312" width="58" height="54"/>
+                                        <state key="normal" title="Button" image="duck2">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="duck3:" destination="Fyi-8c-LI6" eventType="touchUpInside" id="eg5-yD-sEf"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5b2-69-zJE" userLabel="duck4">
+                                        <rect key="frame" x="143" y="240" width="56" height="54"/>
+                                        <state key="normal" title="Button" image="duck1">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="duck4:" destination="Fyi-8c-LI6" eventType="touchUpInside" id="ZhS-30-FAA"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RFb-0T-ra3" userLabel="duck5">
+                                        <rect key="frame" x="234" y="128" width="67" height="76"/>
+                                        <state key="normal" title="Button" image="duck2">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="duck5:" destination="Fyi-8c-LI6" eventType="touchUpInside" id="47i-U6-i25"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oqm-2q-KKG" userLabel="duck6">
+                                        <rect key="frame" x="226" y="240" width="46" height="40"/>
+                                        <state key="normal" title="Button" image="duck2">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="duck6:" destination="Fyi-8c-LI6" eventType="touchUpInside" id="Yfn-5N-C7B"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aab-Cf-Wnq" userLabel="duck8">
+                                        <rect key="frame" x="187" y="257" width="41" height="37"/>
+                                        <state key="normal" title="Button" image="duck1">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="duck8:" destination="Fyi-8c-LI6" eventType="touchUpInside" id="cYj-27-Q3e"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R4J-c9-vRR" userLabel="duck9">
+                                        <rect key="frame" x="138" y="152" width="39" height="38"/>
+                                        <state key="normal" title="Button" image="duck2">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="duck9:" destination="Fyi-8c-LI6" eventType="touchUpInside" id="hbP-D6-oMK"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jVK-KS-gxW" userLabel="duck10">
+                                        <rect key="frame" x="122" y="285" width="46" height="45"/>
+                                        <state key="normal" title="Button" image="duck1">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="duck10:" destination="Fyi-8c-LI6" eventType="touchUpInside" id="ydK-u8-Iie"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scores: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e09-mU-LCl">
+                                        <rect key="frame" x="50" y="508" width="130" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="130" id="1hX-Eg-m1i"/>
+                                            <constraint firstAttribute="height" constant="21" id="gki-1F-38u"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ducks Alive: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H0a-53-fz0">
+                                        <rect key="frame" x="50" y="549" width="130" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="e0y-T5-UN5"/>
+                                            <constraint firstAttribute="width" constant="130" id="n7w-Il-PZE"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mez-ju-iHL">
+                                        <rect key="frame" x="180" y="508" width="100" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="N88-pC-gje"/>
+                                            <constraint firstAttribute="height" constant="21" id="hMI-h8-bzj"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="az3-bG-3Hq">
+                                        <rect key="frame" x="180" y="549" width="100" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="7kn-5B-Xgf"/>
+                                            <constraint firstAttribute="width" constant="100" id="qUi-pT-oiK"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xa5-Ps-ZIw" userLabel="duck7">
+                                        <rect key="frame" x="160" y="80" width="57" height="55"/>
+                                        <state key="normal" title="Button" image="duck1">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="duck7:" destination="Fyi-8c-LI6" eventType="touchUpInside" id="jSA-jB-hiF"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nBw-iY-eTH">
+                                        <rect key="frame" x="27" y="432" width="96" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="Jdv-PF-iox"/>
+                                            <constraint firstAttribute="width" constant="96" id="s2t-wy-Ysa"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="56i-Q0-Blu">
+                                        <rect key="frame" x="50" y="100" width="65" height="56"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j3T-Xl-W2r" userLabel="duck1">
+                                                <rect key="frame" x="0.0" y="0.0" width="65" height="56"/>
+                                                <state key="normal" title="Button" image="duck1">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="duck1:" destination="Fyi-8c-LI6" eventType="touchUpInside" id="JtE-Oh-Rgz"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="j3T-Xl-W2r" secondAttribute="bottom" id="LjJ-Dr-EP6"/>
+                                            <constraint firstItem="j3T-Xl-W2r" firstAttribute="leading" secondItem="56i-Q0-Blu" secondAttribute="leading" id="Q8g-Io-zmX"/>
+                                            <constraint firstAttribute="height" constant="56" id="SQG-2w-xcM"/>
+                                            <constraint firstItem="j3T-Xl-W2r" firstAttribute="top" secondItem="56i-Q0-Blu" secondAttribute="top" id="Vql-UN-asG"/>
+                                            <constraint firstAttribute="trailing" secondItem="j3T-Xl-W2r" secondAttribute="trailing" id="Wf0-h4-rey"/>
+                                            <constraint firstAttribute="width" constant="65" id="r2J-3o-ar3"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="56i-Q0-Blu" firstAttribute="top" secondItem="7uV-qQ-FUS" secondAttribute="top" constant="100" id="3jf-75-gME"/>
+                                    <constraint firstItem="I2W-28-Hn6" firstAttribute="top" secondItem="7uV-qQ-FUS" secondAttribute="topMargin" id="8RL-qw-oBH"/>
+                                    <constraint firstItem="mez-ju-iHL" firstAttribute="leading" secondItem="e09-mU-LCl" secondAttribute="trailing" id="EBf-B0-Tbj"/>
+                                    <constraint firstItem="e09-mU-LCl" firstAttribute="leading" secondItem="7uV-qQ-FUS" secondAttribute="leading" constant="50" id="FH4-Oe-nJY"/>
+                                    <constraint firstItem="e09-mU-LCl" firstAttribute="top" secondItem="nBw-iY-eTH" secondAttribute="bottom" constant="55" id="MbK-8q-DDU"/>
+                                    <constraint firstItem="H0a-53-fz0" firstAttribute="leading" secondItem="7uV-qQ-FUS" secondAttribute="leading" constant="50" id="NcQ-7e-2EQ"/>
+                                    <constraint firstItem="az3-bG-3Hq" firstAttribute="top" secondItem="mez-ju-iHL" secondAttribute="bottom" constant="20" id="T38-lI-nLH"/>
+                                    <constraint firstItem="az3-bG-3Hq" firstAttribute="leading" secondItem="H0a-53-fz0" secondAttribute="trailing" id="V7A-7R-F0o"/>
+                                    <constraint firstItem="H0a-53-fz0" firstAttribute="top" secondItem="e09-mU-LCl" secondAttribute="bottom" constant="20" id="a2X-Fw-kb9"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="I2W-28-Hn6" secondAttribute="trailing" id="aoj-eV-TCh"/>
+                                    <constraint firstAttribute="bottom" secondItem="H0a-53-fz0" secondAttribute="bottom" constant="30" id="fd8-VO-uL3"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="I2W-28-Hn6" secondAttribute="bottom" id="gt8-X5-xQ0"/>
+                                    <constraint firstItem="56i-Q0-Blu" firstAttribute="leading" secondItem="7uV-qQ-FUS" secondAttribute="leading" constant="50" id="mvD-C7-cCx"/>
+                                    <constraint firstItem="I2W-28-Hn6" firstAttribute="leading" secondItem="7uV-qQ-FUS" secondAttribute="leadingMargin" id="oJp-7m-DvQ"/>
+                                    <constraint firstAttribute="bottom" secondItem="az3-bG-3Hq" secondAttribute="bottom" constant="30" id="uuR-OW-e6d"/>
+                                    <constraint firstItem="nBw-iY-eTH" firstAttribute="leading" secondItem="7uV-qQ-FUS" secondAttribute="leading" constant="27" id="zkB-AN-Jb2"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="7uV-qQ-FUS" firstAttribute="top" secondItem="YcL-Ec-eqr" secondAttribute="topMargin" id="4ll-wV-L9b"/>
+                            <constraint firstItem="7uV-qQ-FUS" firstAttribute="leading" secondItem="YcL-Ec-eqr" secondAttribute="leadingMargin" constant="-16" id="5pM-PQ-grf"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="7uV-qQ-FUS" secondAttribute="trailing" constant="-16" id="Jro-hV-pC2"/>
+                            <constraint firstItem="vZP-oz-dKf" firstAttribute="top" secondItem="7uV-qQ-FUS" secondAttribute="bottom" id="n0b-4X-inh"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="duck1" destination="j3T-Xl-W2r" id="xbu-N9-bTc"/>
+                        <outlet property="duck10" destination="jVK-KS-gxW" id="mQ4-4m-OBa"/>
+                        <outlet property="duck1View" destination="56i-Q0-Blu" id="Jje-Xa-McZ"/>
+                        <outlet property="duck2" destination="YEq-N3-S2e" id="sZO-0r-8se"/>
+                        <outlet property="duck3" destination="5bU-RB-Qh6" id="9uU-dT-Xn0"/>
+                        <outlet property="duck4" destination="5b2-69-zJE" id="jM8-2m-B5L"/>
+                        <outlet property="duck5" destination="RFb-0T-ra3" id="1QS-HV-pa9"/>
+                        <outlet property="duck6" destination="oqm-2q-KKG" id="odI-cI-Z0t"/>
+                        <outlet property="duck7" destination="Xa5-Ps-ZIw" id="tzv-xT-cmf"/>
+                        <outlet property="duck8" destination="Aab-Cf-Wnq" id="1GG-gr-nxE"/>
+                        <outlet property="duck9" destination="R4J-c9-vRR" id="HAe-XH-hEO"/>
+                        <outlet property="ducksAliveLabel" destination="az3-bG-3Hq" id="iaF-Qm-lJe"/>
+                        <outlet property="scoresLabel" destination="mez-ju-iHL" id="7JD-mn-9nV"/>
+                        <outlet property="timeLabel" destination="nBw-iY-eTH" id="b3d-UK-1kP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="G6C-8g-tH9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1040" y="341"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="NatureView" width="647" height="647"/>
+        <image name="duck1" width="94" height="110"/>
+        <image name="duck2" width="116" height="95"/>
+        <image name="duckHunt2" width="508" height="381"/>
+    </resources>
+</document>
